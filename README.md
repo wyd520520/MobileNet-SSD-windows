@@ -49,7 +49,9 @@ unzip into install/bin
 > cd $caffe_root/script/install/bin
 > dectect.cmd
 ```
-If load success , you can see the image window like this [result](https://drive.google.com/file/d/15dmQVO0i0wOD28wXQOrLhjg7-UvS7K9O/view?usp=sharing)
+If load success , you can see the image window like this 
+
+![alt tag](https://drive.google.com/file/d/15dmQVO0i0wOD28wXQOrLhjg7-UvS7K9O/view?usp=sharing "Result")
 
 ### Optional detector
 
