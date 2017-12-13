@@ -51,7 +51,7 @@ unzip into install/bin
 ```
 If load success , you can see the image window like this 
 
-![alt tag](https://drive.google.com/file/d/15dmQVO0i0wOD28wXQOrLhjg7-UvS7K9O/view?usp=sharing "Result")
+![alt tag](https://drive.google.com/file/d/15dmQVO0i0wOD28wXQOrLhjg7-UvS7K9O/view?usp=sharing)
 
 ### Optional detector
 
