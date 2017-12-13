@@ -5,10 +5,6 @@ and I add below item into project
 1. add opencv imshow windows to ssd_dectect
 2. add MobileNet to detector
 
-**Update**: this branch is not actively maintained. Please checkout [this](https://github.com/BVLC/caffe/tree/windows) for more active Windows support.
-If you want to read the Chines version of READMER, please click on it please click [README-Chinese](https://github.com/runhang/caffe-ssd/blob/master/README-Chinese.md)
-
-
 ## Windows Setup
 
 ### Requirements
@@ -53,7 +49,8 @@ unzip into install/bin
 If load sucess , you can see the image window like this [result](https://drive.google.com/file/d/15dmQVO0i0wOD28wXQOrLhjg7-UvS7K9O/view?usp=sharing)
 
 ### Optional detector
-Edit detect.cmd varible "detector" to switch type (VGG or MobileNet)
+
+Set detect.cmd varible "detector" to switch VGG or MobileNet
 
 ### Trainning Caffe (CPU Only)
 
