@@ -1,7 +1,7 @@
 # Windows Caffe
 
 **This is an experimental, fixed some bugs from https://github.com/runhang/caffe-ssd-windows
-and I add below item into project 
+and I add Following item into project 
 1. add opencv imshow windows to ssd_dectect
 2. add MobileNet to detector
 
@@ -25,7 +25,7 @@ and I add below item into project
 ### Configuring and Building Caffe (CPU Only)
 Create a python2.7 env from Anaconda and activate
 ```
-> cd caffe_ssd_windows root/script
+> cd $caffe_root/script
 > build_win.cmd
 > cd build
 > Caffe.sln
@@ -33,7 +33,7 @@ Create a python2.7 env from Anaconda and activate
 > build solutions
 > build install
 ```
-Now you can see ssd_detect.ext at install/bin
+Now you can see ssd_detect.exe at $caffe_root/script/install/bin
 
 ### For Visual 2013
 Edit build_win.cmd and set varible MSVC_VERSION=12
@@ -46,7 +46,7 @@ config build_wind.cmd and cmakelist and set CPU_Only flag to 0
 download pre-train model and voc0712 lmdb from [model](https://drive.google.com/file/d/1Wwx6616HRk2eNI7eDZsr3Ijuv2dokCks/view?usp=sharing)
 unzip into install/bin
 ```
-> cd install/bin
+> cd $caffe_root/script/install/bin
 > dectect.cmd
 ```
 If load success , you can see the image window like this [result](https://drive.google.com/file/d/15dmQVO0i0wOD28wXQOrLhjg7-UvS7K9O/view?usp=sharing)
@@ -57,7 +57,7 @@ Set detect.cmd varible "detector" to switch VGG or MobileNet
 
 ### Trainning Caffe (CPU Only)
 ```
-> cd install/bin
+> cd $caffe_root/script/install/bin
 > train.cmd
 ```
 
