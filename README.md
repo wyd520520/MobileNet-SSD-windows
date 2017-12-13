@@ -1,6 +1,6 @@
 # Windows Caffe
 
-**This is an experimental, fixed some bugs from https://github.com/eric612/caffe-ssd-windows 
+**This is an experimental, fixed some bugs from https://github.com/runhang/caffe-ssd-windows
 and I add below item into project 
 1. add opencv imshow windows to ssd_dectect
 2. add MobileNet to detector
@@ -28,25 +28,28 @@ If you want to read the Chines version of READMER, please click on it please cli
 
 ### Configuring and Building Caffe (CPU Only)
 Create a python2.7 env from Anaconda and activate
->cd caffe_ssd_windows root/script
->build_win.cmd
->cd build
->Caffe.sln
->select release
->build solutions
->build install
+```
+> cd caffe_ssd_windows root/script
+> build_win.cmd
+> cd build
+> Caffe.sln
+> select release
+> build solutions
+> build install
+```
+Now you can see ssd_detect.ext at install/bin
 
 ### For GPU
-config build_wind.cmd and cmakelist CPU_Only flag to 0
 
-Now you can see ssd_detect.ext at install/bin
+config build_wind.cmd and cmakelist and set CPU_Only flag to 0
 
 ### Running Caffe (CPU Only)
 download pre-train model and voc0712 lmdb from [model](https://drive.google.com/file/d/1Wwx6616HRk2eNI7eDZsr3Ijuv2dokCks/view?usp=sharing)
 unzip into install/bin
-
->cd install/bin
->dectect.cmd
+```
+> cd install/bin
+> dectect.cmd
+```
 If load sucess , you can see the image window like this [result](https://drive.google.com/file/d/15dmQVO0i0wOD28wXQOrLhjg7-UvS7K9O/view?usp=sharing)
 
 ### Optional detector
