@@ -35,6 +35,9 @@ Create a python2.7 env from Anaconda and activate
 ```
 Now you can see ssd_detect.ext at install/bin
 
+### For Visual 2013
+Edit build_win.cmd and set varible MSVC_VERSION=12
+
 ### For GPU
 
 config build_wind.cmd and cmakelist and set CPU_Only flag to 0
@@ -46,15 +49,15 @@ unzip into install/bin
 > cd install/bin
 > dectect.cmd
 ```
-If load sucess , you can see the image window like this [result](https://drive.google.com/file/d/15dmQVO0i0wOD28wXQOrLhjg7-UvS7K9O/view?usp=sharing)
+If load success , you can see the image window like this [result](https://drive.google.com/file/d/15dmQVO0i0wOD28wXQOrLhjg7-UvS7K9O/view?usp=sharing)
 
 ### Optional detector
 
 Set detect.cmd varible "detector" to switch VGG or MobileNet
 
 ### Trainning Caffe (CPU Only)
-
->cd install/bin
->train.cmd
-
+```
+> cd install/bin
+> train.cmd
+```
 
