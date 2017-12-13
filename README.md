@@ -1,7 +1,7 @@
 # Windows Caffe
 
 **This is an experimental, fixed some bugs from https://github.com/runhang/caffe-ssd-windows
-and I add Following item into project 
+and I add following item into project 
 1. add opencv imshow windows to ssd_dectect
 2. add MobileNet to detector
 
@@ -58,6 +58,6 @@ Set detect.cmd varible "detector" to switch VGG or MobileNet
 ### Trainning Caffe (CPU Only)
 ```
 > cd $caffe_root/script/install/bin
-> train.cmd
+> caffe train -solver models\VGGNet\VOC0712\SSD_300x300\solver.prototxt --weights=models\VGGNet\VGG_ILSVRC_16_layers_fc_reduced.caffemodel
 ```
 
