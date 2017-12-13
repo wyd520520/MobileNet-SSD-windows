@@ -21,6 +21,7 @@
 #include "caffe/layers/sigmoid_layer.hpp"
 #include "caffe/layers/tanh_layer.hpp"
 #include "caffe/layers/threshold_layer.hpp"
+#include "caffe/layers/neuron_layer.hpp"
 
 #ifdef USE_CUDNN
 #include "caffe/layers/cudnn_relu_layer.hpp"
