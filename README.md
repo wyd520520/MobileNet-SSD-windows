@@ -2,8 +2,8 @@
 
 **This is an experimental, fixed some bugs from https://github.com/runhang/caffe-ssd-windows
 and I add following item into project 
-1. add opencv imshow windows to ssd_dectect
-2. add MobileNet to detector
+1. add opencv imshow 
+2. add MobileNet 
 
 ## Windows Setup
 
@@ -40,26 +40,46 @@ Edit build_win.cmd and set varible MSVC_VERSION=12
 
 ### For GPU
 
-config build_wind.cmd and cmakelist and set CPU_Only flag to 0
+config build_win.cmd and set CPU_Only flag to 0
 
-### Running Caffe (CPU Only)
-download pre-train model and voc0712 lmdb from [model](https://drive.google.com/file/d/1Wwx6616HRk2eNI7eDZsr3Ijuv2dokCks/view?usp=sharing)
-unzip into install/bin
+### Running Caffe 
+Download SSD_300x300 [deploy model](https://drive.google.com/file/d/0BzKzrI_SkD1_WVVTSmQxU0dVRzA/view) and save at 
+$caffe_root\models\VGGNet\VOC0712\SSD_300x300\
+Download deploy weights from original [web](https://github.com/chuanqi305/MobileNet-SSD) and save at 
+$caffe_root\models\\MobileNet\
 ```
-> cd $caffe_root/script/install/bin
+> cd $caffe_root/
 > dectect.cmd
 ```
+
 If load success , you can see the image window like this 
 
 ![alt tag](2017-12-13_141522.png)
 
 ### Optional detector
 
-Set detect.cmd varible "detector" to switch VGG or MobileNet
+Set detect.cmd varible "detector" (0,1) to switch VGG or MobileNet
 
-### Trainning Caffe (CPU Only)
+### Trainning Prepare
+
+Download [lmdb](https://drive.google.com/open?id=19pBP1NwomDvm43xxgDaRuj_X4KubwuCZ)
+Unzip into $caffe_root/
+Please check the path exist "$caffe_root\examples\VOC0712\VOC0712_trainval_lmdb"
+
+### Trainning VGG_SSD Caffe 
+
+Download SSD_300x300 [pretrain weights](http://cs.unc.edu/~wliu/projects/ParseNet/VGG_ILSVRC_16_layers_fc_reduced.caffemodel) and save at 
+$caffe_root\models\VGGNet\
 ```
-> cd $caffe_root/script/install/bin
-> caffe train -solver models\VGGNet\VOC0712\SSD_300x300\solver.prototxt --weights=models\VGGNet\VGG_ILSVRC_16_layers_fc_reduced.caffemodel
+> cd $caffe_root/
+> train.cmd
 ```
 
+### Trainning MobilentSSD  
+
+Download pre-train weights from original [web](https://github.com/chuanqi305/MobileNet-SSD) and save at 
+$caffe_root\models\\MobileNet\
+```
+> cd $caffe_root/
+> train_mobilenet.cmd
+```
