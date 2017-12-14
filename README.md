@@ -36,6 +36,7 @@ Create a python2.7 env from Anaconda and activate
 Now you can see ssd_detect.exe at $caffe_root/script/install/bin
 
 ### For Visual 2013
+
 Edit build_win.cmd and set varible MSVC_VERSION=12
 
 ### For GPU
@@ -44,9 +45,13 @@ config build_win.cmd and set CPU_Only flag to 0
 
 ### Running Caffe 
 Download SSD_300x300 [deploy model](https://drive.google.com/file/d/0BzKzrI_SkD1_WVVTSmQxU0dVRzA/view) and save at 
+
 $caffe_root\models\VGGNet\VOC0712\SSD_300x300\
+
 Download deploy weights from original [web](https://github.com/chuanqi305/MobileNet-SSD) and save at 
+
 $caffe_root\models\\MobileNet\
+
 ```
 > cd $caffe_root/
 > dectect.cmd
@@ -63,13 +68,17 @@ Set detect.cmd varible "detector" (0,1) to switch VGG or MobileNet
 ### Trainning Prepare
 
 Download [lmdb](https://drive.google.com/open?id=19pBP1NwomDvm43xxgDaRuj_X4KubwuCZ)
-Unzip into $caffe_root/
+
+Unzip into $caffe_root/ 
+
 Please check the path exist "$caffe_root\examples\VOC0712\VOC0712_trainval_lmdb"
 
 ### Trainning VGG_SSD Caffe 
 
-Download SSD_300x300 [pretrain weights](http://cs.unc.edu/~wliu/projects/ParseNet/VGG_ILSVRC_16_layers_fc_reduced.caffemodel) and save at 
+Download SSD_300x300 [pretrain weights](http://cs.unc.edu/~wliu/projects/ParseNet/VGG_ILSVRC_16_layers_fc_reduced.caffemodel) and save at
+
 $caffe_root\models\VGGNet\
+
 ```
 > cd $caffe_root/
 > train.cmd
@@ -78,7 +87,9 @@ $caffe_root\models\VGGNet\
 ### Trainning MobilentSSD  
 
 Download pre-train weights from original [web](https://github.com/chuanqi305/MobileNet-SSD) and save at 
+
 $caffe_root\models\\MobileNet\
+
 ```
 > cd $caffe_root/
 > train_mobilenet.cmd
