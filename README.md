@@ -104,4 +104,4 @@ Download weights and prototxt [here](https://drive.google.com/open?id=1RdRDzfhVt
 
 ### Feature
 
-1. Support customize Yolo V2 model ( I think this model would be better)
+1. Support customize YoloV2 model 
