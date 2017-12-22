@@ -102,6 +102,6 @@ I used SSD-VGG16 to train our own dataset , but the result was bad , finetune th
 
 Download weights and prototxt [here](https://drive.google.com/open?id=1RdRDzfhVtzX27Lp8clv5mahyTf0O-O8Y)
 
-### Feature
+### Future
 
 1. Support customize YoloV2 model 
