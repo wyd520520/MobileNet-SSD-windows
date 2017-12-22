@@ -99,3 +99,9 @@ $caffe_root\models\\MobileNet\
 I used SSD-VGG16 to train our own dataset , but the result was bad , finetune the trainning parameter would be better. 
 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/xu9MkkufG0g/0.jpg)](https://www.youtube.com/watch?v=xu9MkkufG0g)
+
+Download weights and prototxt [here](https://drive.google.com/open?id=1RdRDzfhVtzX27Lp8clv5mahyTf0O-O8Y)
+
+### Feature
+
+1. support customize yolo model ( I think this model would be better)
