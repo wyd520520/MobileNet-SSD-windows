@@ -77,6 +77,8 @@ Makefile.config
 *lmdb
 
 # build, distribute, and bins (+ python proto bindings)
+data/Demo/
+out/
 build
 .build_debug/*
 .build_release/*

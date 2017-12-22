@@ -1,7 +1,7 @@
 # Windows Caffe
 
 **This is an experimental, fixed some bugs from https://github.com/runhang/caffe-ssd-windows
-and I add following item into project 
+and I add following items into project 
 1. add opencv imshow 
 2. add MobileNet 
 
@@ -94,3 +94,8 @@ $caffe_root\models\\MobileNet\
 > cd $caffe_root/
 > train_mobilenet.cmd
 ```
+### Video Demo
+
+I used SSD-VGG16 to train our own dataset , but the result was bad , finetune the trainning parameter would be better. 
+
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/xu9MkkufG0g/0.jpg)](https://www.youtube.com/watch?v=xu9MkkufG0g)
