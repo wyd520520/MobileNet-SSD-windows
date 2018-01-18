@@ -105,6 +105,6 @@ follow this [project](https://github.com/chuanqi305/MobileNet-SSD) step
 > demo.cmd
 ```
 
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/xu9MkkufG0g/0.jpg)](https://www.youtube.com/watch?v=9REYv5H3WMw)
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/9REYv5H3WMw/0.jpg)](https://www.youtube.com/watch?v=9REYv5H3WMw)
 
 
