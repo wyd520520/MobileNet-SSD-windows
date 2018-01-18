@@ -17,6 +17,9 @@
 #include <opencv2/core/core.hpp>
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
+#include <opencv2/videoio.hpp>
+#include <opencv2/video.hpp>
+
 #endif  // USE_OPENCV
 #include <algorithm>
 #include <iomanip>
@@ -346,7 +349,7 @@ int main(int argc, char** argv) {
   //std::ifstream infile(argv[3]);
   const string& indir = argv[3];
   std::string file;
-  
+  out << file_type <<"demo";
   if (file_type == "image")
   {
 	  char buf[1000];
@@ -405,7 +408,10 @@ int main(int argc, char** argv) {
   }
   else 
   {
-	  cv::String path("%s/*.mp4"); //select only jpg
+	  char buf[1000];
+	  sprintf(buf, "%s/*.mp4", indir);
+	  cv::String path(buf); //select only jpg
+
 	  vector<cv::String> fn;
 	  vector<cv::Mat> data;
 	  cv::glob(path, fn, true); // recurse
@@ -443,8 +449,33 @@ int main(int argc, char** argv) {
 					  out << static_cast<int>(d[4] * img.rows) << " ";
 					  out << static_cast<int>(d[5] * img.cols) << " ";
 					  out << static_cast<int>(d[6] * img.rows) << std::endl;
+
+					  cv::Point pt1, pt2;
+					  pt1.x = (img.cols*d[3]);
+					  pt1.y = (img.rows*d[4]);
+					  pt2.x = (img.cols*d[5]);
+					  pt2.y = (img.rows*d[6]);
+					  int index = static_cast<int>(d[1]);
+					  int green = 255 * ((index + 1) % 3);
+					  int blue = 255 * (index % 3);
+					  int red = 255 * ((index + 1) % 4);
+					  cv::rectangle(img, pt1, pt2, cvScalar(red, green, blue), 1, 8, 0);
+
+					  char label[100];
+					  sprintf(label, "%s,%f", CLASSES[static_cast<int>(d[1])], score);
+					  int baseline;
+					  cv::Size size = cv::getTextSize(label, cv::FONT_HERSHEY_SIMPLEX, 0.5, 0, &baseline);
+					  cv::Point pt3;
+					  pt3.x = pt1.x + size.width;
+					  pt3.y = pt1.y - size.height;
+
+					  cv::rectangle(img, pt1, pt3, cvScalar(red, green, blue), -1);
+
+					  cv::putText(img, label, pt1, cv::FONT_HERSHEY_SIMPLEX, 0.5, cv::Scalar(0, 0, 0));
 				  }
 			  }
+			  cv::imshow("show", img);
+			  cv::waitKey(1);
 			  ++frame_count;
 		  }
 		  if (cap.isOpened()) {

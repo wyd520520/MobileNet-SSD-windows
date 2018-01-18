@@ -94,14 +94,17 @@ $caffe_root\models\\MobileNet\
 > cd $caffe_root/
 > train_mobilenet.cmd
 ```
+#### Trainning Own dataset by using MobilentSSD  
+
+follow this [project](https://github.com/chuanqi305/MobileNet-SSD) step
+
 ### Video Demo
 
-I used SSD-VGG16 to train our own dataset , but the result was bad , finetune the trainning parameter would be better. 
+```
+> cd $caffe_root/
+> demo.cmd
+```
 
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/xu9MkkufG0g/0.jpg)](https://www.youtube.com/watch?v=xu9MkkufG0g)
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/xu9MkkufG0g/0.jpg)](https://www.youtube.com/watch?v=9REYv5H3WMw)
 
-Download weights and prototxt [here](https://drive.google.com/open?id=1RdRDzfhVtzX27Lp8clv5mahyTf0O-O8Y)
 
-### Future
-
-1. Support customize YoloV2 model 

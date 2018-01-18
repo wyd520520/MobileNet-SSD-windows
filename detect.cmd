@@ -1,12 +1,12 @@
 @echo off
 @setlocal EnableDelayedExpansion
 set detector=1
-set confidence_threshold=0.7
+set confidence_threshold=0.5
 set in_dir=data\VOC0712
 
 if !detector! EQU 0 (
 		set wait_time=1000
-		scripts\build\install\bin\ssd_detect models\VGGNet\VOC0712\SSD_300x300\deploy.prototxt ^
+		scripts\build\examples\ssd\Release\ssd_detect models\VGGNet\VOC0712\SSD_300x300\deploy.prototxt ^
 		models\VGGNet\VOC0712\SSD_300x300\VGG_VOC0712_SSD_300x300_iter_120000.caffemodel ^
 		%in_dir% ^
 		-file_type image ^
@@ -19,7 +19,7 @@ if !detector! EQU 0 (
 
 	) else (
 		set wait_time=1000
-		scripts\build\install\bin\ssd_detect models\MobileNet\MobileNetSSD_deploy.prototxt ^
+		scripts\build\examples\ssd\Release\ssd_detect models\MobileNet\MobileNetSSD_deploy.prototxt ^
 		models\MobileNet\MobileNetSSD_deploy.caffemodel ^
 		%in_dir% ^
 		-file_type image ^

@@ -222,7 +222,9 @@ if !RUN_TESTS! EQU 1 (
 
 if %RUN_INSTALL% EQU 1 (
     cmake --build . --target install --config %CMAKE_CONFIG%
+	
 )
-
+cd ..
+copy opencv_ffmpeg310_64.dll build\examples\ssd\Release\opencv_ffmpeg310_64.dll
 popd
 @endlocal
