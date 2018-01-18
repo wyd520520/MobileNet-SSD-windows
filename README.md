@@ -24,16 +24,11 @@ and I add following items into project
 
 ### Configuring and Building Caffe (CPU Only)
 Create a python2.7 env from Anaconda and activate
+
 ```
 > cd $caffe_root/script
 > build_win.cmd
-> cd build
-> Caffe.sln
-> select release
-> build solutions
-> build install
 ```
-Now you can see ssd_detect.exe at $caffe_root/script/install/bin
 
 ### For Visual 2013
 
@@ -44,6 +39,7 @@ Edit build_win.cmd and set varible MSVC_VERSION=12
 config build_win.cmd and set CPU_Only flag to 0
 
 ### Running Caffe 
+
 Download SSD_300x300 [deploy model](https://drive.google.com/file/d/0BzKzrI_SkD1_WVVTSmQxU0dVRzA/view) and save at 
 
 $caffe_root\models\VGGNet\VOC0712\SSD_300x300\
