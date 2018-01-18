@@ -94,7 +94,7 @@ $caffe_root\models\\MobileNet\
 > cd $caffe_root/
 > train_mobilenet.cmd
 ```
-#### Trainning Own dataset by using MobilentSSD  
+#### Trainning own dataset and deploy
 
 follow this [project](https://github.com/chuanqi305/MobileNet-SSD) step
 
