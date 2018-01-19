@@ -103,4 +103,19 @@ follow this [project](https://github.com/chuanqi305/MobileNet-SSD) step
 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/9REYv5H3WMw/0.jpg)](https://www.youtube.com/watch?v=9REYv5H3WMw)
 
+#### Vehicle deploy model 
 
+##### CLASS NAME
+
+```
+char* CLASSES2[6] = { "__background__","bicycle", "car", "motorbike", "person","cones" };
+```
+##### Model and Weights
+
+[weights](https://drive.google.com/open?id=1LbLSTPFSlHML5qAUYN-kt1bw2HxvvNWS)
+
+[model](https://drive.google.com/open?id=1KOE5r-71FFWU0LZbpo9HMEUwM_RE1LHR)
+
+##### Demo Video
+
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/jn6SOzT_wPA/0.jpg)](https://www.youtube.com/watch?v=jn6SOzT_wPA)
