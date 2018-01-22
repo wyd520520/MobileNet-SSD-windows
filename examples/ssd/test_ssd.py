@@ -53,28 +53,16 @@ net.blobs['data'].reshape(1,        # batch size
                           300, 300)  # image size is 227x227
 
 
-
-
-def det(image, pic):
-    transformed_image = transformer.preprocess('data', image)
-    #plt.imshow(image)
-
-    net.blobs['data'].data[...] = transformed_image
-
-    ### perform classification
-    output = net.forward()
-
-    res = output['detection_out'][0]  # the output probability vector for the first image in the batch
-    print(res.shape)
+def vis_detections(image,result) :
     w = image.shape[1]
     h = image.shape[0]
-    for i in range(res.shape[1]):
-        left = res[0][i][3] * w
-        top = res[0][i][4] * h
-        right = res[0][i][5] * w
-        bot = res[0][i][6] * h
-        score = res[0][i][2]
-        label = res[0][i][1]
+    for i in range(result.shape[1]):
+        left = result[0][i][3] * w
+        top = result[0][i][4] * h
+        right = result[0][i][5] * w
+        bot = result[0][i][6] * h
+        score = result[0][i][2]
+        label = result[0][i][1]
         if(score>0.5) :
             print(left,right,top,bot,score,label)
             cv2.rectangle(image,(int(left), int(top)),(int(right),int(bot)),(0,255,0), 2)
@@ -87,9 +75,26 @@ def det(image, pic):
 
             cv2.putText(image, label,(int(left), int(top+ size[1])),font,0.5,(0,0,0),0)
 
+def det(image, pic):
+    
+    transformed_image = transformer.preprocess('data', image)
+    #plt.imshow(image)
+
+    net.blobs['data'].data[...] = transformed_image
+
+    ### perform classification
+    output = net.forward()
+
+    res = output['detection_out'][0]  # the output probability vector for the first image in the batch
+    #print(res.shape)
+    return res
+
+
     
 pic = sys.argv[1]
 image = caffe.io.load_image(pic)
-det(image, pic)
-cv2.imshow("Image", image)
+image_show =cv2.imread(pic)  
+result = det(image, pic)
+vis_detections(image_show,result)
+cv2.imshow("Image", image_show)
 cv2.waitKey (0)
