@@ -126,3 +126,12 @@ char* CLASSES2[6] = { "__background__","bicycle", "car", "motorbike", "person","
 ##### Demo Video
 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/jn6SOzT_wPA/0.jpg)](https://www.youtube.com/watch?v=jn6SOzT_wPA)
+
+### See also
+
+#### Labeling tool with MobileNet-SSD
+
+[AutoLabelImg](https://github.com/eric612/AutoLabelImg)
+
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/PnFCTBvq3OI/0.jpg)](https://www.youtube.com/watch?v=PnFCTBvq3OI)
+
