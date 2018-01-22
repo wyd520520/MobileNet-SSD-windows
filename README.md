@@ -53,6 +53,13 @@ $caffe_root\models\\MobileNet\
 > dectect.cmd
 ```
 
+#### Python Usage
+
+```
+> cd $caffe_root
+> python examples\ssd\test_ssd.py data\VOC0712\000166.jpg models\MobileNet\MobileNetSSD_deploy.prototxt models\MobileNet\MobileNetSSD_deploy.caffemodel
+```
+
 If load success , you can see the image window like this 
 
 ![alt tag](2017-12-13_141522.png)
