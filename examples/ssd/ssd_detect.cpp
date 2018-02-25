@@ -28,7 +28,7 @@
 #include <string>
 #include <utility>
 #include <vector>
-
+#include "caffe/util/benchmark.hpp"
 char* CLASSES[21] = { "__background__",
 		   "aeroplane", "bicycle", "bird", "boat",
 		   "bottle", "bus", "car", "cat", "chair",
@@ -77,7 +77,7 @@ Detector::Detector(const string& model_file,
 #else
   Caffe::set_mode(Caffe::GPU);
 #endif
-
+  //Caffe::set_mode(Caffe::CPU);
   /* Load the network. */
   net_.reset(new Net<float>(model_file, TEST));
   net_->CopyTrainedLayersFrom(weights_file);
@@ -365,8 +365,10 @@ int main(int argc, char** argv) {
 		  if (img.empty()) continue; //only proceed if sucsessful
 									// you probably want to do some preprocessing
 		  CHECK(!img.empty()) << "Unable to decode image " << file;
+		  CPUTimer batch_timer;
+		  batch_timer.Start();
 		  std::vector<vector<float> > detections = detector.Detect(img);
-
+		  LOG(INFO) << "Computing time: " << batch_timer.MilliSeconds() << " ms.";
 		  /* Print the detection results. */
 		  for (int i = 0; i < detections.size(); ++i) {
 			  const vector<float>& d = detections[i];
