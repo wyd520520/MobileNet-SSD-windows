@@ -4,6 +4,7 @@
 and I add following items into project 
 1. add opencv imshow 
 2. add MobileNet 
+3. Support MobileNetV2 (source from [MobileNetv2-SSDLite](https://github.com/chuanqi305/MobileNetv2-SSDLite) )
 
 ## Windows Setup
 
