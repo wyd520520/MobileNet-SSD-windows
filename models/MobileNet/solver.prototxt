@@ -8,9 +8,9 @@ max_iter: 120000
 lr_policy: "multistep"
 gamma: 0.5
 weight_decay: 0.00005
-snapshot: 5000
-snapshot_prefix: "models/MobileNet/MobileNetSSD_deploy"
-solver_mode: GPU
+snapshot: 1000
+snapshot_prefix: "models/MobileNet/"
+solver_mode: CPU
 debug_info: false
 snapshot_after_train: true
 test_initialization: false

@@ -101,8 +101,6 @@ $caffe_root\models\\MobileNet\
 
 ### Trainning MobilnetSSD_V2
   
-$caffe_root\models\\MobileNet\
-
 ```
 > cd $caffe_root/
 > train_mobilenet_v2.cmd

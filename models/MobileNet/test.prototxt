@@ -21,14 +21,14 @@ layer {
     }
   }
   data_param {
-    source: "examples/VOC0712/vehicle_test_lmdb"
+    source: "examples/VOC0712/VOC0712_test_lmdb"
     batch_size: 8
     backend: LMDB
   }
   annotated_data_param {
     batch_sampler {
     }
-    label_map_file: "data/VOC0712/labelmap_custom.prototxt"
+    label_map_file: "data/VOC0712/labelmap_voc.prototxt"
   }
 }
 layer {
@@ -2406,7 +2406,7 @@ layer {
   }
 }
 layer {
-  name: "conv11_mbox_conf_new"
+  name: "conv11_mbox_conf"
   type: "Convolution"
   bottom: "conv11"
   top: "conv11_mbox_conf"
@@ -2419,7 +2419,7 @@ layer {
     decay_mult: 0.0
   }
   convolution_param {
-    num_output: 18
+    num_output: 63
     kernel_size: 1
     weight_filler {
       type: "msra"
@@ -2458,7 +2458,7 @@ layer {
   bottom: "data"
   top: "conv11_mbox_priorbox"
   prior_box_param {
-    min_size: 30.0
+    min_size: 60.0
     aspect_ratio: 2.0
     flip: true
     clip: false
@@ -2516,7 +2516,7 @@ layer {
   }
 }
 layer {
-  name: "conv13_mbox_conf_new"
+  name: "conv13_mbox_conf"
   type: "Convolution"
   bottom: "conv13"
   top: "conv13_mbox_conf"
@@ -2529,7 +2529,7 @@ layer {
     decay_mult: 0.0
   }
   convolution_param {
-    num_output: 36
+    num_output: 126
     kernel_size: 1
     weight_filler {
       type: "msra"
@@ -2568,8 +2568,8 @@ layer {
   bottom: "data"
   top: "conv13_mbox_priorbox"
   prior_box_param {
-    min_size: 60.0
-    max_size: 100.0
+    min_size: 105.0
+    max_size: 150.0
     aspect_ratio: 2.0
     aspect_ratio: 3.0
     flip: true
@@ -2628,7 +2628,7 @@ layer {
   }
 }
 layer {
-  name: "conv14_2_mbox_conf_new"
+  name: "conv14_2_mbox_conf"
   type: "Convolution"
   bottom: "conv14_2"
   top: "conv14_2_mbox_conf"
@@ -2641,7 +2641,7 @@ layer {
     decay_mult: 0.0
   }
   convolution_param {
-    num_output: 36
+    num_output: 126
     kernel_size: 1
     weight_filler {
       type: "msra"
@@ -2680,8 +2680,8 @@ layer {
   bottom: "data"
   top: "conv14_2_mbox_priorbox"
   prior_box_param {
-    min_size: 100.0
-    max_size: 140.0
+    min_size: 150.0
+    max_size: 195.0
     aspect_ratio: 2.0
     aspect_ratio: 3.0
     flip: true
@@ -2740,7 +2740,7 @@ layer {
   }
 }
 layer {
-  name: "conv15_2_mbox_conf_new"
+  name: "conv15_2_mbox_conf"
   type: "Convolution"
   bottom: "conv15_2"
   top: "conv15_2_mbox_conf"
@@ -2753,7 +2753,7 @@ layer {
     decay_mult: 0.0
   }
   convolution_param {
-    num_output: 36
+    num_output: 126
     kernel_size: 1
     weight_filler {
       type: "msra"
@@ -2792,8 +2792,8 @@ layer {
   bottom: "data"
   top: "conv15_2_mbox_priorbox"
   prior_box_param {
-    min_size: 140.0
-    max_size: 200.0
+    min_size: 195.0
+    max_size: 240.0
     aspect_ratio: 2.0
     aspect_ratio: 3.0
     flip: true
@@ -2852,7 +2852,7 @@ layer {
   }
 }
 layer {
-  name: "conv16_2_mbox_conf_new"
+  name: "conv16_2_mbox_conf"
   type: "Convolution"
   bottom: "conv16_2"
   top: "conv16_2_mbox_conf"
@@ -2865,7 +2865,7 @@ layer {
     decay_mult: 0.0
   }
   convolution_param {
-    num_output: 36
+    num_output: 126
     kernel_size: 1
     weight_filler {
       type: "msra"
@@ -2904,8 +2904,8 @@ layer {
   bottom: "data"
   top: "conv16_2_mbox_priorbox"
   prior_box_param {
-    min_size: 200.0
-    max_size: 240.0
+    min_size: 240.0
+    max_size: 285.0
     aspect_ratio: 2.0
     aspect_ratio: 3.0
     flip: true
@@ -2977,7 +2977,7 @@ layer {
     decay_mult: 0.0
   }
   convolution_param {
-    num_output: 36
+    num_output: 126
     kernel_size: 1
     weight_filler {
       type: "msra"
@@ -3016,7 +3016,7 @@ layer {
   bottom: "data"
   top: "conv17_2_mbox_priorbox"
   prior_box_param {
-    min_size: 240.0
+    min_size: 285.0
     max_size: 300.0
     aspect_ratio: 2.0
     aspect_ratio: 3.0
@@ -3080,7 +3080,7 @@ layer {
     shape {
       dim: 0
       dim: -1
-      dim: 6
+      dim: 21
     }
   }
 }
@@ -3113,7 +3113,7 @@ layer {
     phase: TEST
   }
   detection_output_param {
-    num_classes: 6
+    num_classes: 21
     share_location: true
     background_label_id: 0
     nms_param {
@@ -3135,7 +3135,7 @@ layer {
     phase: TEST
   }
   detection_evaluate_param {
-    num_classes: 6
+    num_classes: 21
     background_label_id: 0
     overlap_threshold: 0.5
     evaluate_difficult_gt: false
