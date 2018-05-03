@@ -46,8 +46,8 @@ layer {
     }
   }
   data_param {
-    source: "examples/VOC0712/VOC0712_trainval_lmdb"
-    batch_size: 16
+    source: "examples/VOC0712/vehicle_trainval_lmdb"
+    batch_size: 8
     backend: LMDB
   }
   annotated_data_param {
@@ -133,7 +133,7 @@ layer {
       max_sample: 1
       max_trials: 50
     }
-    label_map_file: "labelmap.prototxt"
+    label_map_file: "data/VOC0712/labelmap_custom.prototxt"
   }
 }
 layer {
@@ -2511,7 +2511,7 @@ layer {
   }
 }
 layer {
-  name: "conv11_mbox_conf"
+  name: "conv11_mbox_conf_new"
   type: "Convolution"
   bottom: "conv11"
   top: "conv11_mbox_conf"
@@ -2524,7 +2524,7 @@ layer {
     decay_mult: 0.0
   }
   convolution_param {
-    num_output: 63
+    num_output: 18
     kernel_size: 1
     weight_filler {
       type: "msra"
@@ -2563,7 +2563,7 @@ layer {
   bottom: "data"
   top: "conv11_mbox_priorbox"
   prior_box_param {
-    min_size: 60.0
+    min_size: 30.0
     aspect_ratio: 2.0
     flip: true
     clip: false
@@ -2621,7 +2621,7 @@ layer {
   }
 }
 layer {
-  name: "conv13_mbox_conf"
+  name: "conv13_mbox_conf_new"
   type: "Convolution"
   bottom: "conv13"
   top: "conv13_mbox_conf"
@@ -2634,7 +2634,7 @@ layer {
     decay_mult: 0.0
   }
   convolution_param {
-    num_output: 126
+    num_output: 36
     kernel_size: 1
     weight_filler {
       type: "msra"
@@ -2673,8 +2673,8 @@ layer {
   bottom: "data"
   top: "conv13_mbox_priorbox"
   prior_box_param {
-    min_size: 105.0
-    max_size: 150.0
+    min_size: 60.0
+    max_size: 100.0
     aspect_ratio: 2.0
     aspect_ratio: 3.0
     flip: true
@@ -2733,7 +2733,7 @@ layer {
   }
 }
 layer {
-  name: "conv14_2_mbox_conf"
+  name: "conv14_2_mbox_conf_new"
   type: "Convolution"
   bottom: "conv14_2"
   top: "conv14_2_mbox_conf"
@@ -2746,7 +2746,7 @@ layer {
     decay_mult: 0.0
   }
   convolution_param {
-    num_output: 126
+    num_output: 36
     kernel_size: 1
     weight_filler {
       type: "msra"
@@ -2785,8 +2785,8 @@ layer {
   bottom: "data"
   top: "conv14_2_mbox_priorbox"
   prior_box_param {
-    min_size: 150.0
-    max_size: 195.0
+    min_size: 100.0
+    max_size: 140.0
     aspect_ratio: 2.0
     aspect_ratio: 3.0
     flip: true
@@ -2845,7 +2845,7 @@ layer {
   }
 }
 layer {
-  name: "conv15_2_mbox_conf"
+  name: "conv15_2_mbox_conf_new"
   type: "Convolution"
   bottom: "conv15_2"
   top: "conv15_2_mbox_conf"
@@ -2858,7 +2858,7 @@ layer {
     decay_mult: 0.0
   }
   convolution_param {
-    num_output: 126
+    num_output: 36
     kernel_size: 1
     weight_filler {
       type: "msra"
@@ -2897,8 +2897,8 @@ layer {
   bottom: "data"
   top: "conv15_2_mbox_priorbox"
   prior_box_param {
-    min_size: 195.0
-    max_size: 240.0
+    min_size: 140.0
+    max_size: 200.0
     aspect_ratio: 2.0
     aspect_ratio: 3.0
     flip: true
@@ -2957,7 +2957,7 @@ layer {
   }
 }
 layer {
-  name: "conv16_2_mbox_conf"
+  name: "conv16_2_mbox_conf_new"
   type: "Convolution"
   bottom: "conv16_2"
   top: "conv16_2_mbox_conf"
@@ -2970,7 +2970,7 @@ layer {
     decay_mult: 0.0
   }
   convolution_param {
-    num_output: 126
+    num_output: 36
     kernel_size: 1
     weight_filler {
       type: "msra"
@@ -3009,8 +3009,8 @@ layer {
   bottom: "data"
   top: "conv16_2_mbox_priorbox"
   prior_box_param {
-    min_size: 240.0
-    max_size: 285.0
+    min_size: 200.0
+    max_size: 240.0
     aspect_ratio: 2.0
     aspect_ratio: 3.0
     flip: true
@@ -3069,7 +3069,7 @@ layer {
   }
 }
 layer {
-  name: "conv17_2_mbox_conf"
+  name: "conv17_2_mbox_conf_new"
   type: "Convolution"
   bottom: "conv17_2"
   top: "conv17_2_mbox_conf"
@@ -3082,7 +3082,7 @@ layer {
     decay_mult: 0.0
   }
   convolution_param {
-    num_output: 126
+    num_output: 36
     kernel_size: 1
     weight_filler {
       type: "msra"
@@ -3121,7 +3121,7 @@ layer {
   bottom: "data"
   top: "conv17_2_mbox_priorbox"
   prior_box_param {
-    min_size: 285.0
+    min_size: 240.0
     max_size: 300.0
     aspect_ratio: 2.0
     aspect_ratio: 3.0
@@ -3198,7 +3198,7 @@ layer {
     loc_loss_type: SMOOTH_L1
     conf_loss_type: SOFTMAX
     loc_weight: 1.0
-    num_classes: 21
+    num_classes: 6
     share_location: true
     match_type: PER_PREDICTION
     overlap_threshold: 0.5

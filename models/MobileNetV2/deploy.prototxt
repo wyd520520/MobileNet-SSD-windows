@@ -72,7 +72,7 @@ layer {
 }
 layer {
   name: "Conv/relu"
-  type: "ReLU"
+  type: "ReLU6"
   bottom: "Conv"
   top: "Conv"
 }
@@ -143,7 +143,7 @@ layer {
 }
 layer {
   name: "conv/depthwise/relu"
-  type: "ReLU"
+  type: "ReLU6"
   bottom: "conv/depthwise"
   top: "conv/depthwise"
 }
@@ -273,7 +273,7 @@ layer {
 }
 layer {
   name: "conv_1/expand/relu"
-  type: "ReLU"
+  type: "ReLU6"
   bottom: "conv_1/expand"
   top: "conv_1/expand"
 }
@@ -345,7 +345,7 @@ layer {
 }
 layer {
   name: "conv_1/depthwise/relu"
-  type: "ReLU"
+  type: "ReLU6"
   bottom: "conv_1/depthwise"
   top: "conv_1/depthwise"
 }
@@ -475,7 +475,7 @@ layer {
 }
 layer {
   name: "conv_2/expand/relu"
-  type: "ReLU"
+  type: "ReLU6"
   bottom: "conv_2/expand"
   top: "conv_2/expand"
 }
@@ -546,7 +546,7 @@ layer {
 }
 layer {
   name: "conv_2/depthwise/relu"
-  type: "ReLU"
+  type: "ReLU6"
   bottom: "conv_2/depthwise"
   top: "conv_2/depthwise"
 }
@@ -683,7 +683,7 @@ layer {
 }
 layer {
   name: "conv_3/expand/relu"
-  type: "ReLU"
+  type: "ReLU6"
   bottom: "conv_3/expand"
   top: "conv_3/expand"
 }
@@ -755,7 +755,7 @@ layer {
 }
 layer {
   name: "conv_3/depthwise/relu"
-  type: "ReLU"
+  type: "ReLU6"
   bottom: "conv_3/depthwise"
   top: "conv_3/depthwise"
 }
@@ -885,7 +885,7 @@ layer {
 }
 layer {
   name: "conv_4/expand/relu"
-  type: "ReLU"
+  type: "ReLU6"
   bottom: "conv_4/expand"
   top: "conv_4/expand"
 }
@@ -956,7 +956,7 @@ layer {
 }
 layer {
   name: "conv_4/depthwise/relu"
-  type: "ReLU"
+  type: "ReLU6"
   bottom: "conv_4/depthwise"
   top: "conv_4/depthwise"
 }
@@ -1093,7 +1093,7 @@ layer {
 }
 layer {
   name: "conv_5/expand/relu"
-  type: "ReLU"
+  type: "ReLU6"
   bottom: "conv_5/expand"
   top: "conv_5/expand"
 }
@@ -1164,7 +1164,7 @@ layer {
 }
 layer {
   name: "conv_5/depthwise/relu"
-  type: "ReLU"
+  type: "ReLU6"
   bottom: "conv_5/depthwise"
   top: "conv_5/depthwise"
 }
@@ -1301,7 +1301,7 @@ layer {
 }
 layer {
   name: "conv_6/expand/relu"
-  type: "ReLU"
+  type: "ReLU6"
   bottom: "conv_6/expand"
   top: "conv_6/expand"
 }
@@ -1373,7 +1373,7 @@ layer {
 }
 layer {
   name: "conv_6/depthwise/relu"
-  type: "ReLU"
+  type: "ReLU6"
   bottom: "conv_6/depthwise"
   top: "conv_6/depthwise"
 }
@@ -1503,7 +1503,7 @@ layer {
 }
 layer {
   name: "conv_7/expand/relu"
-  type: "ReLU"
+  type: "ReLU6"
   bottom: "conv_7/expand"
   top: "conv_7/expand"
 }
@@ -1574,7 +1574,7 @@ layer {
 }
 layer {
   name: "conv_7/depthwise/relu"
-  type: "ReLU"
+  type: "ReLU6"
   bottom: "conv_7/depthwise"
   top: "conv_7/depthwise"
 }
@@ -1711,7 +1711,7 @@ layer {
 }
 layer {
   name: "conv_8/expand/relu"
-  type: "ReLU"
+  type: "ReLU6"
   bottom: "conv_8/expand"
   top: "conv_8/expand"
 }
@@ -1782,7 +1782,7 @@ layer {
 }
 layer {
   name: "conv_8/depthwise/relu"
-  type: "ReLU"
+  type: "ReLU6"
   bottom: "conv_8/depthwise"
   top: "conv_8/depthwise"
 }
@@ -1919,7 +1919,7 @@ layer {
 }
 layer {
   name: "conv_9/expand/relu"
-  type: "ReLU"
+  type: "ReLU6"
   bottom: "conv_9/expand"
   top: "conv_9/expand"
 }
@@ -1990,7 +1990,7 @@ layer {
 }
 layer {
   name: "conv_9/depthwise/relu"
-  type: "ReLU"
+  type: "ReLU6"
   bottom: "conv_9/depthwise"
   top: "conv_9/depthwise"
 }
@@ -2127,7 +2127,7 @@ layer {
 }
 layer {
   name: "conv_10/expand/relu"
-  type: "ReLU"
+  type: "ReLU6"
   bottom: "conv_10/expand"
   top: "conv_10/expand"
 }
@@ -2198,7 +2198,7 @@ layer {
 }
 layer {
   name: "conv_10/depthwise/relu"
-  type: "ReLU"
+  type: "ReLU6"
   bottom: "conv_10/depthwise"
   top: "conv_10/depthwise"
 }
@@ -2328,7 +2328,7 @@ layer {
 }
 layer {
   name: "conv_11/expand/relu"
-  type: "ReLU"
+  type: "ReLU6"
   bottom: "conv_11/expand"
   top: "conv_11/expand"
 }
@@ -2399,7 +2399,7 @@ layer {
 }
 layer {
   name: "conv_11/depthwise/relu"
-  type: "ReLU"
+  type: "ReLU6"
   bottom: "conv_11/depthwise"
   top: "conv_11/depthwise"
 }
@@ -2536,7 +2536,7 @@ layer {
 }
 layer {
   name: "conv_12/expand/relu"
-  type: "ReLU"
+  type: "ReLU6"
   bottom: "conv_12/expand"
   top: "conv_12/expand"
 }
@@ -2607,7 +2607,7 @@ layer {
 }
 layer {
   name: "conv_12/depthwise/relu"
-  type: "ReLU"
+  type: "ReLU6"
   bottom: "conv_12/depthwise"
   top: "conv_12/depthwise"
 }
@@ -2744,7 +2744,7 @@ layer {
 }
 layer {
   name: "conv_13/expand/relu"
-  type: "ReLU"
+  type: "ReLU6"
   bottom: "conv_13/expand"
   top: "conv_13/expand"
 }
@@ -2816,7 +2816,7 @@ layer {
 }
 layer {
   name: "conv_13/depthwise/relu"
-  type: "ReLU"
+  type: "ReLU6"
   bottom: "conv_13/depthwise"
   top: "conv_13/depthwise"
 }
@@ -2946,7 +2946,7 @@ layer {
 }
 layer {
   name: "conv_14/expand/relu"
-  type: "ReLU"
+  type: "ReLU6"
   bottom: "conv_14/expand"
   top: "conv_14/expand"
 }
@@ -3017,7 +3017,7 @@ layer {
 }
 layer {
   name: "conv_14/depthwise/relu"
-  type: "ReLU"
+  type: "ReLU6"
   bottom: "conv_14/depthwise"
   top: "conv_14/depthwise"
 }
@@ -3154,7 +3154,7 @@ layer {
 }
 layer {
   name: "conv_15/expand/relu"
-  type: "ReLU"
+  type: "ReLU6"
   bottom: "conv_15/expand"
   top: "conv_15/expand"
 }
@@ -3225,7 +3225,7 @@ layer {
 }
 layer {
   name: "conv_15/depthwise/relu"
-  type: "ReLU"
+  type: "ReLU6"
   bottom: "conv_15/depthwise"
   top: "conv_15/depthwise"
 }
@@ -3362,7 +3362,7 @@ layer {
 }
 layer {
   name: "conv_16/expand/relu"
-  type: "ReLU"
+  type: "ReLU6"
   bottom: "conv_16/expand"
   top: "conv_16/expand"
 }
@@ -3433,7 +3433,7 @@ layer {
 }
 layer {
   name: "conv_16/depthwise/relu"
-  type: "ReLU"
+  type: "ReLU6"
   bottom: "conv_16/depthwise"
   top: "conv_16/depthwise"
 }
@@ -3563,7 +3563,7 @@ layer {
 }
 layer {
   name: "Conv_1/relu"
-  type: "ReLU"
+  type: "ReLU6"
   bottom: "Conv_1"
   top: "Conv_1"
 }
@@ -3631,7 +3631,7 @@ layer {
 }
 layer {
   name: "layer_19_1_2/relu"
-  type: "ReLU"
+  type: "ReLU6"
   bottom: "layer_19_1_2"
   top: "layer_19_1_2"
 }
@@ -3703,7 +3703,7 @@ layer {
 }
 layer {
   name: "layer_19_2_2/depthwise/relu"
-  type: "ReLU"
+  type: "ReLU6"
   bottom: "layer_19_2_2/depthwise"
   top: "layer_19_2_2/depthwise"
 }
@@ -3771,7 +3771,7 @@ layer {
 }
 layer {
   name: "layer_19_2_2/relu"
-  type: "ReLU"
+  type: "ReLU6"
   bottom: "layer_19_2_2"
   top: "layer_19_2_2"
 }
@@ -3839,7 +3839,7 @@ layer {
 }
 layer {
   name: "layer_19_1_3/relu"
-  type: "ReLU"
+  type: "ReLU6"
   bottom: "layer_19_1_3"
   top: "layer_19_1_3"
 }
@@ -3911,7 +3911,7 @@ layer {
 }
 layer {
   name: "layer_19_2_3/depthwise/relu"
-  type: "ReLU"
+  type: "ReLU6"
   bottom: "layer_19_2_3/depthwise"
   top: "layer_19_2_3/depthwise"
 }
@@ -3979,7 +3979,7 @@ layer {
 }
 layer {
   name: "layer_19_2_3/relu"
-  type: "ReLU"
+  type: "ReLU6"
   bottom: "layer_19_2_3"
   top: "layer_19_2_3"
 }
@@ -4047,7 +4047,7 @@ layer {
 }
 layer {
   name: "layer_19_1_4/relu"
-  type: "ReLU"
+  type: "ReLU6"
   bottom: "layer_19_1_4"
   top: "layer_19_1_4"
 }
@@ -4119,7 +4119,7 @@ layer {
 }
 layer {
   name: "layer_19_2_4/depthwise/relu"
-  type: "ReLU"
+  type: "ReLU6"
   bottom: "layer_19_2_4/depthwise"
   top: "layer_19_2_4/depthwise"
 }
@@ -4187,7 +4187,7 @@ layer {
 }
 layer {
   name: "layer_19_2_4/relu"
-  type: "ReLU"
+  type: "ReLU6"
   bottom: "layer_19_2_4"
   top: "layer_19_2_4"
 }
@@ -4255,7 +4255,7 @@ layer {
 }
 layer {
   name: "layer_19_1_5/relu"
-  type: "ReLU"
+  type: "ReLU6"
   bottom: "layer_19_1_5"
   top: "layer_19_1_5"
 }
@@ -4327,7 +4327,7 @@ layer {
 }
 layer {
   name: "layer_19_2_5/depthwise/relu"
-  type: "ReLU"
+  type: "ReLU6"
   bottom: "layer_19_2_5/depthwise"
   top: "layer_19_2_5/depthwise"
 }
@@ -4395,7 +4395,7 @@ layer {
 }
 layer {
   name: "layer_19_2_5/relu"
-  type: "ReLU"
+  type: "ReLU6"
   bottom: "layer_19_2_5"
   top: "layer_19_2_5"
 }
@@ -4447,10 +4447,10 @@ layer {
   }
 }
 layer {
-  name: "conv_13/expand_mbox_conf"
+  name: "conv_13/expand_mbox_conf2"
   type: "Convolution"
   bottom: "conv_13/expand"
-  top: "conv_13/expand_mbox_conf"
+  top: "conv_13/expand_mbox_conf2"
   param {
     lr_mult: 1.0
     decay_mult: 1.0
@@ -4460,7 +4460,7 @@ layer {
     decay_mult: 0.0
   }
   convolution_param {
-    num_output: 273
+    num_output: 18
     pad: 1
     kernel_size: 3
     weight_filler {
@@ -4475,7 +4475,7 @@ layer {
 layer {
   name: "conv_13/expand_mbox_conf_perm"
   type: "Permute"
-  bottom: "conv_13/expand_mbox_conf"
+  bottom: "conv_13/expand_mbox_conf2"
   top: "conv_13/expand_mbox_conf_perm"
   permute_param {
     order: 0
@@ -4500,7 +4500,7 @@ layer {
   bottom: "data"
   top: "conv_13/expand_mbox_priorbox"
   prior_box_param {
-    min_size: 60.0
+    min_size: 30.0
     aspect_ratio: 2.0
     flip: true
     clip: false
@@ -4559,10 +4559,10 @@ layer {
   }
 }
 layer {
-  name: "Conv_1_mbox_conf"
+  name: "Conv_1_mbox_conf2"
   type: "Convolution"
   bottom: "Conv_1"
-  top: "Conv_1_mbox_conf"
+  top: "Conv_1_mbox_conf2"
   param {
     lr_mult: 1.0
     decay_mult: 1.0
@@ -4572,7 +4572,7 @@ layer {
     decay_mult: 0.0
   }
   convolution_param {
-    num_output: 546
+    num_output: 36
     pad: 1
     kernel_size: 3
     weight_filler {
@@ -4587,7 +4587,7 @@ layer {
 layer {
   name: "Conv_1_mbox_conf_perm"
   type: "Permute"
-  bottom: "Conv_1_mbox_conf"
+  bottom: "Conv_1_mbox_conf2"
   top: "Conv_1_mbox_conf_perm"
   permute_param {
     order: 0
@@ -4612,8 +4612,8 @@ layer {
   bottom: "data"
   top: "Conv_1_mbox_priorbox"
   prior_box_param {
-    min_size: 105.0
-    max_size: 150.0
+    min_size: 60.0
+    max_size: 100.0
     aspect_ratio: 2.0
     aspect_ratio: 3.0
     flip: true
@@ -4673,10 +4673,10 @@ layer {
   }
 }
 layer {
-  name: "layer_19_2_2_mbox_conf"
+  name: "layer_19_2_2_mbox_conf2"
   type: "Convolution"
   bottom: "layer_19_2_2"
-  top: "layer_19_2_2_mbox_conf"
+  top: "layer_19_2_2_mbox_conf2"
   param {
     lr_mult: 1.0
     decay_mult: 1.0
@@ -4686,7 +4686,7 @@ layer {
     decay_mult: 0.0
   }
   convolution_param {
-    num_output: 546
+    num_output: 36
     pad: 1
     kernel_size: 3
     weight_filler {
@@ -4701,7 +4701,7 @@ layer {
 layer {
   name: "layer_19_2_2_mbox_conf_perm"
   type: "Permute"
-  bottom: "layer_19_2_2_mbox_conf"
+  bottom: "layer_19_2_2_mbox_conf2"
   top: "layer_19_2_2_mbox_conf_perm"
   permute_param {
     order: 0
@@ -4726,8 +4726,8 @@ layer {
   bottom: "data"
   top: "layer_19_2_2_mbox_priorbox"
   prior_box_param {
-    min_size: 150.0
-    max_size: 195.0
+    min_size: 100.0
+    max_size: 140.0
     aspect_ratio: 2.0
     aspect_ratio: 3.0
     flip: true
@@ -4787,10 +4787,10 @@ layer {
   }
 }
 layer {
-  name: "layer_19_2_3_mbox_conf"
+  name: "layer_19_2_3_mbox_conf2"
   type: "Convolution"
   bottom: "layer_19_2_3"
-  top: "layer_19_2_3_mbox_conf"
+  top: "layer_19_2_3_mbox_conf2"
   param {
     lr_mult: 1.0
     decay_mult: 1.0
@@ -4800,7 +4800,7 @@ layer {
     decay_mult: 0.0
   }
   convolution_param {
-    num_output: 546
+    num_output: 36
     pad: 1
     kernel_size: 3
     weight_filler {
@@ -4815,7 +4815,7 @@ layer {
 layer {
   name: "layer_19_2_3_mbox_conf_perm"
   type: "Permute"
-  bottom: "layer_19_2_3_mbox_conf"
+  bottom: "layer_19_2_3_mbox_conf2"
   top: "layer_19_2_3_mbox_conf_perm"
   permute_param {
     order: 0
@@ -4840,8 +4840,8 @@ layer {
   bottom: "data"
   top: "layer_19_2_3_mbox_priorbox"
   prior_box_param {
-    min_size: 195.0
-    max_size: 240.0
+    min_size: 140.0
+    max_size: 200.0
     aspect_ratio: 2.0
     aspect_ratio: 3.0
     flip: true
@@ -4901,10 +4901,10 @@ layer {
   }
 }
 layer {
-  name: "layer_19_2_4_mbox_conf"
+  name: "layer_19_2_4_mbox_conf2"
   type: "Convolution"
   bottom: "layer_19_2_4"
-  top: "layer_19_2_4_mbox_conf"
+  top: "layer_19_2_4_mbox_conf2"
   param {
     lr_mult: 1.0
     decay_mult: 1.0
@@ -4914,7 +4914,7 @@ layer {
     decay_mult: 0.0
   }
   convolution_param {
-    num_output: 546
+    num_output: 36
     pad: 1
     kernel_size: 3
     weight_filler {
@@ -4929,7 +4929,7 @@ layer {
 layer {
   name: "layer_19_2_4_mbox_conf_perm"
   type: "Permute"
-  bottom: "layer_19_2_4_mbox_conf"
+  bottom: "layer_19_2_4_mbox_conf2"
   top: "layer_19_2_4_mbox_conf_perm"
   permute_param {
     order: 0
@@ -4954,8 +4954,8 @@ layer {
   bottom: "data"
   top: "layer_19_2_4_mbox_priorbox"
   prior_box_param {
-    min_size: 240.0
-    max_size: 285.0
+    min_size: 200.0
+    max_size: 240.0
     aspect_ratio: 2.0
     aspect_ratio: 3.0
     flip: true
@@ -5015,10 +5015,10 @@ layer {
   }
 }
 layer {
-  name: "layer_19_2_5_mbox_conf"
+  name: "layer_19_2_5_mbox_conf2"
   type: "Convolution"
   bottom: "layer_19_2_5"
-  top: "layer_19_2_5_mbox_conf"
+  top: "layer_19_2_5_mbox_conf2"
   param {
     lr_mult: 1.0
     decay_mult: 1.0
@@ -5028,7 +5028,7 @@ layer {
     decay_mult: 0.0
   }
   convolution_param {
-    num_output: 546
+    num_output: 36
     pad: 1
     kernel_size: 3
     weight_filler {
@@ -5043,7 +5043,7 @@ layer {
 layer {
   name: "layer_19_2_5_mbox_conf_perm"
   type: "Permute"
-  bottom: "layer_19_2_5_mbox_conf"
+  bottom: "layer_19_2_5_mbox_conf2"
   top: "layer_19_2_5_mbox_conf_perm"
   permute_param {
     order: 0
@@ -5068,7 +5068,7 @@ layer {
   bottom: "data"
   top: "layer_19_2_5_mbox_priorbox"
   prior_box_param {
-    min_size: 285.0
+    min_size: 240.0
     max_size: 300.0
     aspect_ratio: 2.0
     aspect_ratio: 3.0
@@ -5132,7 +5132,7 @@ layer {
     shape {
       dim: 0
       dim: -1
-      dim: 91
+      dim: 6
     }
   }
 }
@@ -5162,7 +5162,7 @@ layer {
     phase: TEST
   }
   detection_output_param {
-    num_classes: 91
+    num_classes: 6
     share_location: true
     background_label_id: 0
     nms_param {

@@ -88,7 +88,7 @@ $caffe_root\models\VGGNet\
 > train.cmd
 ```
 
-### Trainning MobilentSSD  
+### Trainning MobilentSSD_V1  
 
 Download pre-train weights from original [web](https://github.com/chuanqi305/MobileNet-SSD) and save at 
 
@@ -98,7 +98,17 @@ $caffe_root\models\\MobileNet\
 > cd $caffe_root/
 > train_mobilenet.cmd
 ```
-#### Trainning own dataset and deploy
+
+### Trainning MobilnetSSD_V2
+  
+$caffe_root\models\\MobileNet\
+
+```
+> cd $caffe_root/
+> train_mobilenet_v2.cmd
+```
+
+#### Trainning own dataset and deploy MobilentSSD_V1
 
 follow this [project](https://github.com/chuanqi305/MobileNet-SSD) step
 
@@ -106,7 +116,7 @@ follow this [project](https://github.com/chuanqi305/MobileNet-SSD) step
 
 ```
 > cd $caffe_root/
-> demo.cmd
+> demo.cmd or demov2.cmd (MobilenetSSD_V2)
 ```
 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/9REYv5H3WMw/0.jpg)](https://www.youtube.com/watch?v=9REYv5H3WMw)

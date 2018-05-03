@@ -30,6 +30,7 @@
 #include "caffe/layers/smooth_L1_loss_layer.hpp"
 #include "caffe/layers/tanh_layer.hpp"
 #include "caffe/layers/normalize_layer.hpp"
+#include "caffe/layers/sigmoid_cross_entropy_loss_layer.hpp"
 #include "caffe/proto/caffe.pb.h"
 
 #ifdef USE_CUDNN
@@ -125,7 +126,11 @@ INSTANTIATE_CLASS(LayerRegisterer);
 
 
 
-
+template <typename Dtype>
+shared_ptr<Layer<Dtype> > GetSigmoidCrossEntropyLossLayer(const LayerParameter& param) {
+	return shared_ptr<Layer<Dtype> >(new SigmoidCrossEntropyLossLayer<Dtype>(param));
+}
+REGISTER_LAYER_CREATOR(SigmoidCrossEntropyLoss, GetSigmoidCrossEntropyLossLayer);
 
 ///////////////////////////////////////////////////////
 // Get Flatten layer according to engine.
@@ -247,6 +252,7 @@ shared_ptr<Layer<Dtype> > GetSmoothL1LossLayer(const LayerParameter& param) {
 	return shared_ptr<Layer<Dtype> >(new SmoothL1LossLayer<Dtype>(param));
 }
 REGISTER_LAYER_CREATOR(SmoothL1Loss, GetSmoothL1LossLayer);
+
 
 
 
@@ -376,6 +382,30 @@ shared_ptr<Layer<Dtype> > GetLRNLayer(const LayerParameter& param) {
 
 REGISTER_LAYER_CREATOR(LRN, GetLRNLayer);
 
+// Get relu layer according to engine.
+template <typename Dtype>
+shared_ptr<Layer<Dtype> > GetReLU6Layer(const LayerParameter& param) {
+	ReLUParameter_Engine engine = param.relu_param().engine();
+	if (engine == ReLUParameter_Engine_DEFAULT) {
+		engine = ReLUParameter_Engine_CAFFE;
+#ifdef USE_CUDNN
+		engine = ReLUParameter_Engine_CUDNN;
+#endif
+	}
+	if (engine == ReLUParameter_Engine_CAFFE) {
+		return shared_ptr<Layer<Dtype> >(new ReLULayer<Dtype>(param));
+#ifdef USE_CUDNN
+	}
+	else if (engine == ReLUParameter_Engine_CUDNN) {
+		return shared_ptr<Layer<Dtype> >(new CuDNNReLULayer<Dtype>(param));
+#endif
+	}
+	else {
+		LOG(FATAL) << "Layer " << param.name() << " has unknown engine.";
+		throw;  // Avoids missing return warning
+	}
+}
+REGISTER_LAYER_CREATOR(ReLU6, GetReLU6Layer);
 // Get relu layer according to engine.
 template <typename Dtype>
 shared_ptr<Layer<Dtype> > GetReLULayer(const LayerParameter& param) {

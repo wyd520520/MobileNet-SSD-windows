@@ -4,8 +4,8 @@ set detector=1
 set confidence_threshold=0.3
 set in_dir=data\
 set wait_time=1
-scripts\build\examples\ssd\Release\ssd_detect models\MobileNetV2\deploy_voc.prototxt ^
-models\MobileNetV2\deploy_voc.caffemodel ^
+scripts\build\examples\ssd\Release\ssd_detect models\MobileNetV2\deploy.prototxt ^
+models\MobileNetV2\MobileNetSSD_deploy_iter_5000.caffemodel ^
 %in_dir% ^
 -file_type video ^
 -mean_value 0.5,0.5,0.5 ^
