@@ -139,7 +139,7 @@ char* CLASSES2[6] = { "__background__","bicycle", "car", "motorbike", "person","
 
 [model](https://drive.google.com/open?id=1KOE5r-71FFWU0LZbpo9HMEUwM_RE1LHR)
 
-##### Vehicle deploy with MobilnetSSD_V2
+##### Vehicle detection using MobilnetSSD_V2
 
 ```
 > cd $caffe_root/
