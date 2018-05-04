@@ -133,15 +133,26 @@ follow this [project](https://github.com/chuanqi305/MobileNet-SSD) step
 ```
 char* CLASSES2[6] = { "__background__","bicycle", "car", "motorbike", "person","cones" };
 ```
-##### Model and Weights
+##### Model and Weights MobilnetSSD_V1
 
 [weights](https://drive.google.com/open?id=1LbLSTPFSlHML5qAUYN-kt1bw2HxvvNWS)
 
 [model](https://drive.google.com/open?id=1KOE5r-71FFWU0LZbpo9HMEUwM_RE1LHR)
 
-##### Demo Video
+##### Vehicle deploy with MobilnetSSD_V2
+
+```
+> cd $caffe_root/
+> demo.cmd or demov2_custom.cmd 
+```
+
+##### Demo Video MobilnetSSD_V1
 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/jn6SOzT_wPA/0.jpg)](https://www.youtube.com/watch?v=jn6SOzT_wPA)
+
+##### Demo Video MobilnetSSD_V2
+
+[![IMAGE ALT TEXT HERE](https://www.youtube.com/watch?v=oc3tXxOoSH4&feature=youtu.be)
 
 ### See also
 
