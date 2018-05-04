@@ -29,12 +29,20 @@
 #include <utility>
 #include <vector>
 #include "caffe/util/benchmark.hpp"
+//#define custom_class
+#ifdef custom_class
+char* CLASSES[6] = { "__background__",
+"bicyle", "car", "motorbike", "person","cones"
+};
+
+#else
 char* CLASSES[21] = { "__background__",
-		   "aeroplane", "bicycle", "bird", "boat",
-		   "bottle", "bus", "car", "cat", "chair",
-		   "cow", "diningtable", "dog", "horse",
-		   "motorbike", "person", "pottedplant",
-		   "sheep", "sofa", "train", "tvmonitor" };
+"aeroplane", "bicycle", "bird", "boat",
+"bottle", "bus", "car", "cat", "chair",
+"cow", "diningtable", "dog", "horse",
+"motorbike", "person", "pottedplant",
+"sheep", "sofa", "train", "tvmonitor" };
+#endif
 #ifdef USE_OPENCV
 using namespace caffe;  // NOLINT(build/namespaces)
 
