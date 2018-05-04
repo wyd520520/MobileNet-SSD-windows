@@ -152,7 +152,7 @@ char* CLASSES2[6] = { "__background__","bicycle", "car", "motorbike", "person","
 
 ##### Demo Video MobilnetSSD_V2
 
-[![IMAGE ALT TEXT HERE](https://www.youtube.com/watch?v=oc3tXxOoSH4&feature=youtu.be)
+[![IMAGE ALT TEXT HERE](https://www.youtube.com/watch?v=oc3tXxOoSH4&t)
 
 ### See also
 
