@@ -46,8 +46,8 @@ layer {
     }
   }
   data_param {
-    source: "examples/VOC0712/vehicle_trainval_lmdb"
-    batch_size: 4
+    source: "examples/VOC0712/VOC0712_trainval_lmdb"
+    batch_size: 16
     backend: LMDB
   }
   annotated_data_param {
@@ -133,7 +133,7 @@ layer {
       max_sample: 1
       max_trials: 50
     }
-    label_map_file: "labelmap_voc.prototxt"
+    label_map_file:  "data/VOC0712/labelmap_voc.prototxt"
   }
 }
 layer {

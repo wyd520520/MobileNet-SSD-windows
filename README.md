@@ -117,7 +117,12 @@ follow this [project](https://github.com/chuanqi305/MobileNet-SSD) step
 > demo.cmd or demov2.cmd (MobilenetSSD_V2)
 ```
 
+#### MobilnetSSD
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/9REYv5H3WMw/0.jpg)](https://www.youtube.com/watch?v=9REYv5H3WMw)
+
+#### MobilnetSSD_V2
+
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/0jzYd-UfaYY/0.jpg)](https://www.youtube.com/watch?v=0jzYd-UfaYY)
 
 ### Webcam Demo
 
