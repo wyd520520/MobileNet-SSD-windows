@@ -607,7 +607,7 @@ void RegionLossLayer<Dtype>::Forward_cpu(
       //std::cout<<"obj"<<swap_data[best_index+4]<<std::endl;
       avg_obj += swap_data[best_index + 4];
           //LOG(INFO)<<"avg_obj:"<<avg_obj;
-      diff[best_index + 4] = (-1.0) * object_scale_ * (iou - swap_data[best_index + 4]) * logistic_gradient(swap_data[best_index + 4]);
+      diff[best_index + 4] = (-1.0) * object_scale_ * (1 - swap_data[best_index + 4]) * logistic_gradient(swap_data[best_index + 4]);
 	  //LOG(INFO) << "real_diff: " << diff[best_index + 4];
       //if (rescore)
       //std::cout<<"diff:"<<diff[best_index+4]<<std::endl;

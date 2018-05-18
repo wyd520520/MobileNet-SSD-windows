@@ -42,12 +42,12 @@ layer {
       random_order_prob: 0.0
     }
     expand_param {
-      prob: 0.5
-      max_expand_ratio: 4.0
+      prob: 0.0
+      max_expand_ratio: 2.0
     }
   }
   data_param {
-    source: "../../../examples/VOC0712/VOC0712_trainval_lmdb"
+    source: "examples/VOC0712/VOC0712_trainval_lmdb"
     batch_size: 8
     backend: LMDB
   }
@@ -58,34 +58,7 @@ layer {
       max_trials: 1
     }
 
-    batch_sampler {
-      sampler {
-        min_scale: 0.7
-        max_scale: 1.0
-        min_aspect_ratio: 0.85
-        max_aspect_ratio: 1.17
 
-      }
-      sample_constraint {
-        min_jaccard_overlap: 0.3
-      }
-      max_sample: 1
-      max_trials: 50
-    }
-    batch_sampler {
-      sampler {
-        min_scale: 0.7
-        max_scale: 1.0
-        min_aspect_ratio: 0.85
-        max_aspect_ratio: 1.17
-
-      }
-      sample_constraint {
-        min_jaccard_overlap: 0.5
-      }
-      max_sample: 1
-      max_trials: 50
-    }
     batch_sampler {
       sampler {
         min_scale: 0.7

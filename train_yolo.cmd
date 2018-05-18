@@ -1,1 +1,3 @@
-scripts\build\tools\Release\caffe train -solver models\yolov2\gnet_region_solver_darknet_v3.prototxt --weights=models\yolov2\conv18.caffemodel
+scripts\build\tools\Release\caffe train -solver models\yolov2\solver.prototxt --weights=models\MobileNetV2\deploy_voc.caffemodel
+::--weights=models\MobileNetV2\deploy_voc.caffemodel
+::--snapshot=models\yolov2\MobileNetSSD_deploy_iter_15000.solverstate
