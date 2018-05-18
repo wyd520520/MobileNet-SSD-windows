@@ -18,6 +18,8 @@
 
 using namespace boost::property_tree;  // NOLINT(build/namespaces)
 
+
+
 namespace caffe {
 
 /**
@@ -42,6 +44,7 @@ class DetectionOutputLayer : public Layer<Dtype> {
   virtual inline int MinBottomBlobs() const { return 3; }
   virtual inline int MaxBottomBlobs() const { return 4; }
   virtual inline int ExactNumTopBlobs() const { return 1; }
+
 
  protected:
   /**

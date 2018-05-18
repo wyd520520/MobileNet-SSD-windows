@@ -16,6 +16,8 @@
 
 namespace caffe {
 
+
+
 bool SortBBoxAscend(const NormalizedBBox& bbox1, const NormalizedBBox& bbox2) {
   return bbox1.score() < bbox2.score();
 }

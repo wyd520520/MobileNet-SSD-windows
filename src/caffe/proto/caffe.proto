@@ -433,7 +433,28 @@ message ParamSpec {
   // The multiplier on the global weight decay for this parameter.
   optional float decay_mult = 4 [default = 1.0];
 }
+message RegionLossParameter{
+  //Yolo 9000
+  optional uint32 side = 1 [default = 13];
+  optional uint32 num_class = 2 [default = 20];
+  optional uint32 bias_match = 3 [default = 1];
+  optional uint32 coords = 4 [default = 4];
+  optional uint32 num = 5 [default = 5];
+  optional uint32 softmax = 6 [default = 1];
+  optional float jitter = 7 [default = 0.2];
+  optional uint32 rescore = 8 [default = 1];
 
+  optional float object_scale = 9 [default = 1.0];
+  optional float class_scale = 10 [default = 1.0];
+  optional float noobject_scale = 11 [default = 0.5];
+  optional float coord_scale = 12 [default = 5.0];
+  optional uint32 absolute = 13 [default = 1];
+  optional float thresh = 14 [default = 0.2];
+  optional uint32 random = 15 [default = 1];
+  repeated float biases = 16;
+  optional string softmax_tree = 17;
+  optional string class_map = 18;
+}
 // NOTE
 // Update the next available ID when you add a new LayerParameter field.
 //
@@ -483,6 +504,7 @@ message LayerParameter {
   // Parameters shared by loss layers.
   optional LossParameter loss_param = 101;
 
+  optional RegionLossParameter region_loss_param = 600;
   // Layer type-specific parameters.
   //
   // Note: certain layers may have more than one computational engine
@@ -501,6 +523,7 @@ message LayerParameter {
   optional DataParameter data_param = 107;
   optional DetectionEvaluateParameter detection_evaluate_param = 205;
   optional DetectionOutputParameter detection_output_param = 204;
+  optional YoloDetectionOutputParameter yolo_detection_output_param = 601;
   optional DropoutParameter dropout_param = 108;
   optional DummyDataParameter dummy_data_param = 109;
   optional EltwiseParameter eltwise_param = 110;
@@ -763,6 +786,7 @@ message AnnotatedDataParameter {
   // If provided, it will replace the AnnotationType stored in each
   // AnnotatedDatum.
   optional AnnotatedDatum.AnnotationType anno_type = 3;
+  optional int32 yolo_data_type = 4 [default = 0];
 }
 
 message ArgMaxParameter {
@@ -841,6 +865,7 @@ message ContrastiveLossParameter {
   // legacy_version = true uses (margin - d^2). This is kept to support /
   // reproduce existing models and results
   optional bool legacy_version = 2 [default = false];
+
 }
 
 message ConvolutionParameter {
@@ -1036,7 +1061,17 @@ message DetectionOutputParameter {
   // If provided, save outputs to video file.
   optional string save_file = 12;
 }
-
+message YoloDetectionOutputParameter {
+  // Yolo detection output layer
+  optional uint32 side = 1 [default = 13];
+  optional uint32 num_classes = 2 [default = 20];
+  optional uint32 num_box = 3 [default = 5];
+  optional uint32 coords = 4 [default = 4];
+  optional float confidence_threshold = 5 [default = 0.01];
+  optional float nms_threshold = 6 [default = 0.45];
+  repeated float biases = 7;
+  optional string label_map_file = 8;
+}
 message DropoutParameter {
   optional float dropout_ratio = 1 [default = 0.5]; // dropout ratio
 }

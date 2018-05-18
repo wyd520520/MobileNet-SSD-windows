@@ -31,6 +31,8 @@
 #include "caffe/layers/tanh_layer.hpp"
 #include "caffe/layers/normalize_layer.hpp"
 #include "caffe/layers/sigmoid_cross_entropy_loss_layer.hpp"
+#include "caffe/layers/region_loss_layer.hpp"
+#include "caffe/layers/yolo_detection_output_layer.hpp"
 #include "caffe/proto/caffe.pb.h"
 
 #ifdef USE_CUDNN
@@ -196,6 +198,12 @@ shared_ptr<Layer<Dtype> > GetDetectionOutputLayer(const LayerParameter& param) {
 }
 REGISTER_LAYER_CREATOR(DetectionOutput, GetDetectionOutputLayer);
 
+// Get DetectionOutput layer according to engine.
+template <typename Dtype>
+shared_ptr<Layer<Dtype> > GetYoloDetectionOutputLayer(const LayerParameter& param) {
+	return shared_ptr<Layer<Dtype> >(new YoloDetectionOutputLayer<Dtype>(param));
+}
+REGISTER_LAYER_CREATOR(YoloDetectionOutput, GetYoloDetectionOutputLayer);
 
 // Get MultiBoxLoss layer according to engine.
 template <typename Dtype>
@@ -204,7 +212,12 @@ shared_ptr<Layer<Dtype> > GetMultiBoxLossLayer(const LayerParameter& param) {
 }
 REGISTER_LAYER_CREATOR(MultiBoxLoss, GetMultiBoxLossLayer);
 
-
+// Get RegionLoss layer according to engine.
+template <typename Dtype>
+shared_ptr<Layer<Dtype> > GetRegionLossLayer(const LayerParameter& param) {
+	return shared_ptr<Layer<Dtype> >(new RegionLossLayer<Dtype>(param));
+}
+REGISTER_LAYER_CREATOR(RegionLoss, GetRegionLossLayer);
 // Get Permute layer according to engine.
 template <typename Dtype>
 shared_ptr<Layer<Dtype> > GetPermuteLayer(const LayerParameter& param) {

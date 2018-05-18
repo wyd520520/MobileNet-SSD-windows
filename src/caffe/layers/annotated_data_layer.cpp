@@ -29,12 +29,14 @@ template <typename Dtype>
 void AnnotatedDataLayer<Dtype>::DataLayerSetUp(
     const vector<Blob<Dtype>*>& bottom, const vector<Blob<Dtype>*>& top) {
   const int batch_size = this->layer_param_.data_param().batch_size();
+  
   const AnnotatedDataParameter& anno_data_param =
       this->layer_param_.annotated_data_param();
   for (int i = 0; i < anno_data_param.batch_sampler_size(); ++i) {
     batch_samplers_.push_back(anno_data_param.batch_sampler(i));
   }
   label_map_file_ = anno_data_param.label_map_file();
+  yolo_data_type_ = anno_data_param.yolo_data_type();
   // Make sure dimension is consistent within batch.
   const TransformationParameter& transform_param =
     this->layer_param_.transform_param();
@@ -88,12 +90,18 @@ void AnnotatedDataLayer<Dtype>::DataLayerSetUp(
           num_bboxes += anno_datum.annotation_group(g).annotation_size();
         }
         label_shape[0] = 1;
+
         label_shape[1] = 1;
         // BasePrefetchingDataLayer<Dtype>::LayerSetUp() requires to call
         // cpu_data and gpu_data for consistent prefetch thread. Thus we make
         // sure there is at least one bbox.
         label_shape[2] = std::max(num_bboxes, 1);
         label_shape[3] = 8;
+		if (yolo_data_type_ == 1) {
+			label_shape[2] = 30;
+			label_shape[0] = batch_size;
+			label_shape[3] = 5;
+		}
       } else {
         LOG(FATAL) << "Unknown annotation type.";
       }
@@ -266,6 +274,10 @@ void AnnotatedDataLayer<Dtype>::load_batch(Batch<Dtype>* batch) {
       label_shape[0] = 1;
       label_shape[1] = 1;
       label_shape[3] = 8;
+	  if (yolo_data_type_ == 1) {
+		  label_shape[0] = batch_size;
+		  label_shape[3] = 5;
+	  }
       if (num_bboxes == 0) {
         // Store all -1 in the label.
         label_shape[2] = 1;
@@ -273,25 +285,60 @@ void AnnotatedDataLayer<Dtype>::load_batch(Batch<Dtype>* batch) {
         caffe_set<Dtype>(8, -1, batch->label_.mutable_cpu_data());
       } else {
         // Reshape the label and store the annotation.
-        label_shape[2] = num_bboxes;
-        batch->label_.Reshape(label_shape);
+		if (yolo_data_type_ == 1) {
+			label_shape[2] = 30;
+			//LOG(INFO) << "num_bboxes: " << num_bboxes;
+			batch->label_.Reshape(label_shape);
+			
+		}
+		else {
+			label_shape[2] = num_bboxes;
+			batch->label_.Reshape(label_shape);
+		}
+
         top_label = batch->label_.mutable_cpu_data();
         int idx = 0;
         for (int item_id = 0; item_id < batch_size; ++item_id) {
           const vector<AnnotationGroup>& anno_vec = all_anno[item_id];
+		  if (yolo_data_type_ == 1) {
+			  int label_offset = batch->label_.offset(item_id);
+			  idx = label_offset;
+			  caffe_set(30 * 5, Dtype(0), &top_label[idx]);
+		  }
+
           for (int g = 0; g < anno_vec.size(); ++g) {
             const AnnotationGroup& anno_group = anno_vec[g];
             for (int a = 0; a < anno_group.annotation_size(); ++a) {
               const Annotation& anno = anno_group.annotation(a);
               const NormalizedBBox& bbox = anno.bbox();
-              top_label[idx++] = item_id;
-              top_label[idx++] = anno_group.group_label();
-              top_label[idx++] = anno.instance_id();
-              top_label[idx++] = bbox.xmin();
-              top_label[idx++] = bbox.ymin();
-              top_label[idx++] = bbox.xmax();
-              top_label[idx++] = bbox.ymax();
-              top_label[idx++] = bbox.difficult();
+			  if (yolo_data_type_ == 1) {  
+
+				  //LOG(INFO) << "difficult: " << bbox.difficult();
+				  if (!bbox.difficult()) {
+					  float x = (bbox.xmin() + bbox.xmax()) / 2.0;
+					  float y = (bbox.ymin() + bbox.ymax()) / 2.0;
+					  float w = bbox.xmax() - bbox.xmin();
+					  float h = bbox.ymax() - bbox.ymin();
+					  top_label[idx++] = anno_group.group_label() - 1;
+					  //LOG(INFO) << "class: " << anno_group.group_label();
+					  top_label[idx++] = x;
+					  top_label[idx++] = y;
+					  top_label[idx++] = w;
+					  top_label[idx++] = h;
+				  }
+
+			  }
+			  else {
+				  top_label[idx++] = item_id;
+				  top_label[idx++] = anno_group.group_label();
+				  top_label[idx++] = anno.instance_id();
+				  top_label[idx++] = bbox.xmin();
+				  top_label[idx++] = bbox.ymin();
+				  top_label[idx++] = bbox.xmax();
+				  top_label[idx++] = bbox.ymax();
+				  top_label[idx++] = bbox.difficult();
+			  }
+
             }
           }
         }
