@@ -4206,7 +4206,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 125
+    num_output: 50
     kernel_size: 1
     pad: 0
     stride: 1
@@ -4227,20 +4227,20 @@ layer {
 	phase: TEST
   }
   yolo_detection_output_param {
-    num_classes: 20
+    num_classes: 5
     coords: 4
     confidence_threshold: 0.3
 	nms_threshold: 0.45
 
-    biases: 1.08
-    biases: 1.19
-    biases: 3.42
-    biases: 4.41
-    biases: 6.63
-    biases: 11.38
-    biases: 9.42
-    biases: 5.11
-    biases: 16.62
-    biases: 10.52
+    biases: 0.54
+    biases: 0.595
+    biases: 1.71
+    biases: 2.20
+    biases: 3.315
+    biases: 5.69
+    biases: 4.71
+    biases: 2.555
+    biases: 8.31
+    biases: 5.26
   }
 }
