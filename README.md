@@ -113,7 +113,7 @@ $caffe_root\models\\MobileNet\
 > train_yolo.cmd
 ```
 
-#### Trainning own dataset and deploy MobilentSSD_V1
+### Trainning own dataset and deploy MobilentSSD_V1
 
 follow this [project](https://github.com/chuanqi305/MobileNet-SSD) step
 
@@ -124,10 +124,10 @@ follow this [project](https://github.com/chuanqi305/MobileNet-SSD) step
 > demo.cmd or demov2.cmd (MobilenetSSD_V2)
 ```
 
-#### MobilnetSSD
+### MobilnetSSD
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/9REYv5H3WMw/0.jpg)](https://www.youtube.com/watch?v=9REYv5H3WMw)
 
-#### MobilnetSSD_V2
+### MobilnetSSD_V2
 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/0jzYd-UfaYY/0.jpg)](https://www.youtube.com/watch?v=0jzYd-UfaYY)
 
@@ -138,35 +138,35 @@ follow this [project](https://github.com/chuanqi305/MobileNet-SSD) step
 > demo_webcam.cmd
 ```
 
-#### Vehicle deploy model 
+### Vehicle deploy model 
 
-##### CLASS NAME
+#### CLASS NAME
 
 ```
 char* CLASSES2[6] = { "__background__","bicycle", "car", "motorbike", "person","cones" };
 ```
-##### Model and Weights MobilnetSSD_V1
+### Model and Weights MobilnetSSD_V1
 
 [weights](https://drive.google.com/open?id=1LbLSTPFSlHML5qAUYN-kt1bw2HxvvNWS)
 
 [model](https://drive.google.com/open?id=1KOE5r-71FFWU0LZbpo9HMEUwM_RE1LHR)
 
-##### Vehicle detection using MobilnetSSD_V2
+### Vehicle detection using MobilnetSSD_V2
 
 ```
 > cd $caffe_root/
 > demo.cmd or demov2_custom.cmd 
 ```
 
-##### Demo Video MobilnetSSD_V1
+### Demo Video MobilnetSSD_V1
 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/jn6SOzT_wPA/0.jpg)](https://www.youtube.com/watch?v=jn6SOzT_wPA)
 
-##### Demo Video MobilnetSSD_V2
+### Demo Video MobilnetSSD_V2
 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/oc3tXxOoSH4/0.jpg)](https://www.youtube.com/watch?v=oc3tXxOoSH4)
 
-##### Demo Video MobilenetYOLO_V2
+### Demo Video MobilenetYOLO_V2
 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/NjOtxdMolgY/0.jpg)](https://www.youtube.com/watch?v=NjOtxdMolgY)
 
