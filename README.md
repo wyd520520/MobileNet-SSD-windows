@@ -88,7 +88,7 @@ $caffe_root\models\VGGNet\
 > train.cmd
 ```
 
-### Trainning MobilentSSD_V1  
+### Trainning Mobilenet_V1_SSD  
 
 Download pre-train weights from original [web](https://github.com/chuanqi305/MobileNet-SSD) and save at 
 
@@ -99,11 +99,18 @@ $caffe_root\models\\MobileNet\
 > train_mobilenet.cmd
 ```
 
-### Trainning MobilnetSSD_V2
+### Trainning Mobilenet_V2_SSD
   
 ```
 > cd $caffe_root/
 > train_mobilenet_v2.cmd
+```
+
+### Trainning MobilenetYOLO_V2
+  
+```
+> cd $caffe_root/
+> train_yolo.cmd
 ```
 
 #### Trainning own dataset and deploy MobilentSSD_V1
@@ -158,6 +165,12 @@ char* CLASSES2[6] = { "__background__","bicycle", "car", "motorbike", "person","
 ##### Demo Video MobilnetSSD_V2
 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/oc3tXxOoSH4/0.jpg)](https://www.youtube.com/watch?v=oc3tXxOoSH4)
+
+##### Demo Video MobilenetYOLO_V2
+
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/NjOtxdMolgY/0.jpg)](https://www.youtube.com/watch?v=NjOtxdMolgY)
+
+Data augmentation is not optimize now
 
 ### See also
 

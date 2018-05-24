@@ -409,6 +409,8 @@ int main(int argc, char** argv) {
 				  cv::rectangle(img, pt1, pt3, cvScalar(0, 255, 0), -1);
 
 				  cv::putText(img, label, pt1, cv::FONT_HERSHEY_SIMPLEX, 0.5, cv::Scalar(0, 0, 0));
+
+
 			  }
 		  }
 		  cv::imshow("show", img);
@@ -493,7 +495,7 @@ int main(int argc, char** argv) {
 	  char buf[1000];
 	  sprintf(buf, "%s/*.mp4", indir);
 	  cv::String path(buf); //select only jpg
-
+	  int count = 0;
 	  vector<cv::String> fn;
 	  vector<cv::Mat> data;
 	  cv::glob(path, fn, true); // recurse
@@ -540,7 +542,7 @@ int main(int argc, char** argv) {
 					  int index = static_cast<int>(d[1]);
 					  int green = 255 * ((index + 1) % 3);
 					  int blue = 255 * (index % 3);
-					  int red = 255 * ((index + 1) % 4);
+					  int red = 255 * ((index + 1) % 2);
 					  cv::rectangle(img, pt1, pt2, cvScalar(red, green, blue), 1, 8, 0);
 
 					  char label[100];
@@ -554,6 +556,18 @@ int main(int argc, char** argv) {
 					  cv::rectangle(img, pt1, pt3, cvScalar(red, green, blue), -1);
 
 					  cv::putText(img, label, pt1, cv::FONT_HERSHEY_SIMPLEX, 0.5, cv::Scalar(0, 0, 0));
+					  /*int max = 15000;
+					  if (count <= max)
+					  {
+						  cv::Size size;
+						  size.width = img.cols;
+						  size.height = img.rows;
+						  static cv::VideoWriter writer;    // cv::VideoWriter output_video;
+
+						  writer.open("VideoTest.avi", CV_FOURCC('D', 'I', 'V', '3'), 30, size);
+						  writer << img;
+						  count++;
+					  }*/
 				  }
 			  }
 			  cv::imshow("show", img);

@@ -84,7 +84,7 @@ void ApplyNms(vector< PredictionResult<Dtype> >& boxes, vector<int>& idxes, Dtyp
 			if (idx_map.find(j) != idx_map.end()) {
 				continue;
 			}
-			/*vector<Dtype> Bbox1, Bbox2;
+			vector<Dtype> Bbox1, Bbox2;
 			Bbox1.push_back(boxes[i].x);
 			Bbox1.push_back(boxes[i].y);
 			Bbox1.push_back(boxes[i].w);
@@ -98,8 +98,8 @@ void ApplyNms(vector< PredictionResult<Dtype> >& boxes, vector<int>& idxes, Dtyp
 			Dtype iou = box_iou(Bbox1, Bbox2);
 			if (iou >= threshold) {
 			idx_map[j] = 1;
-			}*/
-				NormalizedBBox Bbox1, Bbox2;
+			}
+			/*	NormalizedBBox Bbox1, Bbox2;
 			setNormalizedBBox(Bbox1, boxes[i].x, boxes[i].y, boxes[i].w, boxes[i].h);
 			setNormalizedBBox(Bbox2, boxes[j].x, boxes[j].y, boxes[j].w, boxes[j].h);
 
@@ -107,7 +107,7 @@ void ApplyNms(vector< PredictionResult<Dtype> >& boxes, vector<int>& idxes, Dtyp
 
 			if (overlap >= threshold) {
 				idx_map[j] = 1;
-			}
+			}*/
 		}
 	}
 	for (int i = 0; i < boxes.size(); ++i) {

@@ -21,8 +21,6 @@ layer {
       width: 416
       interp_mode: LINEAR
       interp_mode: AREA
-      interp_mode: NEAREST
-      interp_mode: CUBIC
       interp_mode: LANCZOS4
     }
     emit_constraint {
@@ -42,8 +40,8 @@ layer {
       random_order_prob: 0.0
     }
     expand_param {
-      prob: 0.0
-      max_expand_ratio: 2.0
+      prob: 0.2
+      max_expand_ratio: 1.2
     }
   }
   data_param {
@@ -56,45 +54,34 @@ layer {
     batch_sampler {
       max_sample: 1
       max_trials: 1
+	  use_original_image: 1
     }
-
 
     batch_sampler {
       sampler {
-        min_scale: 0.7
+        min_scale: 0.8
         max_scale: 1.0
-        min_aspect_ratio: 0.85
-        max_aspect_ratio: 1.17
+        min_aspect_ratio: 1
+        max_aspect_ratio: 1
+
       }
       sample_constraint {
-        min_jaccard_overlap: 0.7
+        min_jaccard_overlap: 0.8
+		max_jaccard_overlap: 1.0
       }
       max_sample: 1
       max_trials: 50
     }
     batch_sampler {
       sampler {
-        min_scale: 0.7
+        min_scale: 0.8
         max_scale: 1.0
-        min_aspect_ratio: 0.85
-        max_aspect_ratio: 1.17
-
+        min_aspect_ratio: 1
+        max_aspect_ratio: 1
       }
       sample_constraint {
         min_jaccard_overlap: 0.9
-      }
-      max_sample: 1
-      max_trials: 50
-    }
-    batch_sampler {
-      sampler {
-        min_scale: 0.7
-        max_scale: 1.0
-        min_aspect_ratio: 0.85
-        max_aspect_ratio: 1.17
-      }
-      sample_constraint {
-        max_jaccard_overlap: 1.0
+		max_jaccard_overlap: 1.0
       }
       max_sample: 1
       max_trials: 50
@@ -3673,7 +3660,7 @@ layer {
     decay_mult: 1.0
   }
   convolution_param {
-    num_output: 1024
+    num_output: 512
     bias_term: false
     kernel_size: 1
     weight_filler {
@@ -3741,12 +3728,12 @@ layer {
     decay_mult: 1.0
   }
   convolution_param {
-    num_output: 1024
+    num_output: 512
     bias_term: false
     pad: 1
     kernel_size: 3
     stride: 1
-    group: 1024
+    group: 512
     engine: CAFFE
     weight_filler {
       type: "msra"
@@ -4021,7 +4008,7 @@ layer {
     decay_mult: 1.0
   }
   convolution_param {
-    num_output: 256
+    num_output: 512
     bias_term: false
     kernel_size: 1
     weight_filler {
@@ -4336,7 +4323,7 @@ layer {
     coord_scale: 1.0
     
     absolute: 1
-    thresh: 0.6
+    thresh: 0.5
     random: 0
 
     biases: 1.08
@@ -4349,6 +4336,8 @@ layer {
     biases: 5.11
     biases: 16.62
     biases: 10.52
+	
+	
   }
 }
 

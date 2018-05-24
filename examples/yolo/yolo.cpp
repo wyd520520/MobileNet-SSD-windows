@@ -28,7 +28,7 @@
 //#include <caffe/yolo/region.h>
 #include <time.h>
 #include "caffe/util/benchmark.hpp"
-char* CLASSES[21] = {
+char* CLASSES[21] = { "__background__",
 "aeroplane", "bicycle", "bird", "boat",
 "bottle", "bus", "car", "cat", "chair",
 "cow", "diningtable", "dog", "horse",
