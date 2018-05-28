@@ -218,6 +218,8 @@ void RegionLossLayer<Dtype>::Forward_cpu(
 
 	//const Dtype* input_data = bottom[0]->cpu_data();
 	//std::cout<<"1"<<std::endl;
+	//LOG(INFO) << "shape: " << bottom[0]->width();
+	side_ = bottom[0]->width();
 	const Dtype* label_data = bottom[1]->cpu_data(); //[label,x,y,w,h]
 	//std::cout<<"2"<<std::endl;
 	Dtype* diff = diff_.mutable_cpu_data();

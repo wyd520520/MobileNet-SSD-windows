@@ -37,6 +37,7 @@ void AnnotatedDataLayer<Dtype>::DataLayerSetUp(
   }
   label_map_file_ = anno_data_param.label_map_file();
   yolo_data_type_ = anno_data_param.yolo_data_type();
+  yolo_data_jitter_ = anno_data_param.yolo_data_jitter();
   // Make sure dimension is consistent within batch.
   const TransformationParameter& transform_param =
     this->layer_param_.transform_param();
@@ -180,10 +181,16 @@ void AnnotatedDataLayer<Dtype>::load_batch(Batch<Dtype>* batch) {
     }
     AnnotatedDatum* sampled_datum = NULL;
     bool has_sampled = false;
-    if (batch_samplers_.size() > 0) {
+    if (batch_samplers_.size() > 0 || yolo_data_type_== 1) {
       // Generate sampled bboxes from expand_datum.
       vector<NormalizedBBox> sampled_bboxes;
-      GenerateBatchSamples(*expand_datum, batch_samplers_, &sampled_bboxes);
+	  if (yolo_data_type_) {
+		  GenerateJitterSamples(yolo_data_jitter_, &sampled_bboxes);
+	  }
+	  else {
+		  GenerateBatchSamples(*expand_datum, batch_samplers_, &sampled_bboxes);
+	  }
+      
       if (sampled_bboxes.size() > 0) {
         // Randomly pick a sampled bbox and crop the expand_datum.
         int rand_idx = caffe_rng_rand() % sampled_bboxes.size();

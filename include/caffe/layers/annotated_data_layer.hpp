@@ -37,6 +37,7 @@ class AnnotatedDataLayer : public BasePrefetchingDataLayer<Dtype> {
   vector<BatchSampler> batch_samplers_;
   string label_map_file_;
   int yolo_data_type_;
+  float yolo_data_jitter_;
 };
 
 }  // namespace caffe

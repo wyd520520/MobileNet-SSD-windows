@@ -11,7 +11,7 @@
 #include "caffe/util/io.hpp"
 #include "caffe/util/math_functions.hpp"
 #include "caffe/util/rng.hpp"
-
+int count = 0;
 namespace caffe {
 
 template<typename Dtype>
@@ -675,7 +675,14 @@ void DataTransformer<Dtype>::Transform(const cv::Mat& cv_img,
   crop_bbox->set_ymin(Dtype(h_off) / img_height);
   crop_bbox->set_xmax(Dtype(w_off + width) / img_width);
   crop_bbox->set_ymax(Dtype(h_off + height) / img_height);
-
+  //LOG(INFO) << "w_off: " << w_off;
+  //LOG(INFO) << "h_off: " << h_off;
+  //char filename[256];
+  //sprintf(filename, "A%d.jpg", count);
+  //cv::imwrite(filename, cv_resized_image);
+  //sprintf(filename, "B%d.jpg", count);
+  //cv::imwrite(filename, cv_cropped_image);
+  count++;
   if (has_mean_file) {
     CHECK_EQ(cv_cropped_image.rows, data_mean_.height());
     CHECK_EQ(cv_cropped_image.cols, data_mean_.width());
@@ -816,8 +823,13 @@ void DataTransformer<Dtype>::CropImage(const cv::Mat& img,
   int width = static_cast<int>(scaled_bbox.xmax() - scaled_bbox.xmin());
   int height = static_cast<int>(scaled_bbox.ymax() - scaled_bbox.ymin());
   cv::Rect bbox_roi(w_off, h_off, width, height);
-
+  //char filename[256];
+  //sprintf(filename, "tmp\\A%d.jpg", count);
+  //cv::imwrite(filename, img);
   img(bbox_roi).copyTo(*crop_img);
+
+  //sprintf(filename, "tmp\\B%d.jpg", count);
+  //cv::imwrite(filename, *crop_img);
 }
 
 template <typename Dtype>

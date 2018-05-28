@@ -39,53 +39,16 @@ layer {
       saturation_upper: 1.5
       random_order_prob: 0.0
     }
-    expand_param {
-      prob: 0.2
-      max_expand_ratio: 1.2
-    }
+
   }
   data_param {
     source: "examples/VOC0712/VOC0712_trainval_lmdb"
-    batch_size: 8
+    batch_size: 10
     backend: LMDB
   }
   annotated_data_param {
 	yolo_data_type : 1
-    batch_sampler {
-      max_sample: 1
-      max_trials: 1
-	  use_original_image: 1
-    }
-
-    batch_sampler {
-      sampler {
-        min_scale: 0.8
-        max_scale: 1.0
-        min_aspect_ratio: 1
-        max_aspect_ratio: 1
-
-      }
-      sample_constraint {
-        min_jaccard_overlap: 0.8
-		max_jaccard_overlap: 1.0
-      }
-      max_sample: 1
-      max_trials: 50
-    }
-    batch_sampler {
-      sampler {
-        min_scale: 0.8
-        max_scale: 1.0
-        min_aspect_ratio: 1
-        max_aspect_ratio: 1
-      }
-      sample_constraint {
-        min_jaccard_overlap: 0.9
-		max_jaccard_overlap: 1.0
-      }
-      max_sample: 1
-      max_trials: 50
-    }
+	yolo_data_jitter : 0.3
     label_map_file:  "data/VOC0712/labelmap_voc.prototxt"
   }
 }
