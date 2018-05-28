@@ -5,7 +5,7 @@ set confidence_threshold=0.5
 set in_dir=data\
 set wait_time=2000
 scripts\build\examples\ssd\Release\ssd_detect models\yolov2\deploy_custom.prototxt ^
-models\yolov2\MobileNetYOLO-V2_deploy_iter_20000.caffemodel ^
+models\yolov2\custom.caffemodel ^
 %in_dir% ^
 -file_type video ^
 -mean_value 0.5,0.5,0.5 ^
