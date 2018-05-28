@@ -6,6 +6,10 @@ and I add following items into project
 1. Support MobileNetV2 (source from [MobileNetv2-SSDLite](https://github.com/chuanqi305/MobileNetv2-SSDLite) )
 2. Support yolov2 loss layer (source from my git [caffe-yolov2-windows](https://github.com/eric612/Caffe-YOLOv2-Windows))
 
+## Linux Version
+
+[MobileNet-SSD-linux](https://github.com/eric612/MobileNet-SSD-linux)
+
 ## Windows Setup
 
 ### Requirements
@@ -116,6 +120,15 @@ $caffe_root\models\\MobileNet\
 ### Trainning own dataset and deploy MobilentSSD_V1
 
 follow this [project](https://github.com/chuanqi305/MobileNet-SSD) step
+
+### MobilenetYOLO_V2 Demo
+
+```
+> cd $caffe_root/
+> demo_yolo.cmd
+```
+
+![alt tag](yolo_out.jpg)
 
 ### Video Demo
 
