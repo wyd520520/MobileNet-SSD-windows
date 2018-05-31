@@ -186,7 +186,7 @@ char* CLASSES2[6] = { "__background__","bicycle", "car", "motorbike", "person","
 > demo_yolo_custom.cmd
 ```
 
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/Cac5U8tx7uU/0.jpg)](https://www.youtube.com/watch?v=Cac5U8tx7uU)
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/JuCfOI9DrQ4/0.jpg)](https://www.youtube.com/watch?v=JuCfOI9DrQ4)
 
 
 ### See also
