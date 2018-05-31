@@ -4,7 +4,7 @@ train_net: "models/yolov2/train_custom.prototxt"
 #test_interval: 10000
 base_lr: 0.0005
 display: 10
-max_iter: 50000
+max_iter: 30000
 lr_policy: "multifixed"
 gamma: 0.5
 weight_decay: 0.000004
@@ -23,10 +23,10 @@ stagelr: 0.0005
 stagelr: 0.001
 stagelr: 0.0005
 stagelr: 0.0001
-stageiter: 100
+stageiter: 200
+stageiter: 10000
 stageiter: 20000
-stageiter: 40000
-stageiter: 50000
+stageiter: 30000
 
 iter_size: 2
 type: "RMSProp"

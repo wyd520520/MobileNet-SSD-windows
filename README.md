@@ -181,9 +181,13 @@ char* CLASSES2[6] = { "__background__","bicycle", "car", "motorbike", "person","
 
 ### Demo Video MobilenetYOLO_V2
 
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/NjOtxdMolgY/0.jpg)](https://www.youtube.com/watch?v=NjOtxdMolgY)
+```
+> cd $caffe_root/
+> demo_yolo_custom.cmd
+```
 
-Data augmentation is not optimize now
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/Cac5U8tx7uU/0.jpg)](https://www.youtube.com/watch?v=Cac5U8tx7uU)
+
 
 ### See also
 

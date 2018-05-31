@@ -395,22 +395,22 @@ void RegionLossLayer<Dtype>::Forward_cpu(
             diff[index + 4] = 0;
             //LOG(INFO)<<"best_iou: "<<best_iou<<" index:"<<index;
           }
-		  if (best_iou > 1) {
-			  LOG(INFO) << "best_iou > 1";
-			  diff[index + 4] = 1 - diff[index + 4];
+		  //if (best_iou > 1) {
+			//  LOG(INFO) << "best_iou > 1";
+			//  diff[index + 4] = 1 - diff[index + 4];
 			  
-			  delta_region_class(swap_data, diff, index+5, best_class, num_class_, class_scale_, &avg_cat);
+			//  delta_region_class(swap_data, diff, index+5, best_class, num_class_, class_scale_, &avg_cat);
 
-			  delta_region_box(best_truth, swap_data, biases_, n, index, i, j, side_, side_, diff, .01);
-		  }
+			//  delta_region_box(best_truth, swap_data, biases_, n, index, i, j, side_, side_, diff, .01);
+		 // }
           if (iter < 12800 / bottom[0]->num()){
-            //vector<Dtype> truth;
-            //truth.clear();
-            //truth.push_back((i + .5) / side_); //center of i,j
-            //truth.push_back((j + .5) / side_);
-            //truth.push_back((biases_[2 * n]) / side_); //anchor boxes
-            //truth.push_back((biases_[2 * n + 1]) / side_);
-            //delta_region_box(truth, swap_data, biases_, n, index, i, j, side_, side_, diff, .01);
+            vector<Dtype> truth;
+            truth.clear();
+            truth.push_back((i + .5) / side_); //center of i,j
+            truth.push_back((j + .5) / side_);
+            truth.push_back((biases_[2 * n]) / side_); //anchor boxes
+            truth.push_back((biases_[2 * n + 1]) / side_);
+            delta_region_box(truth, swap_data, biases_, n, index, i, j, side_, side_, diff, .01);
           }
         }
 #ifdef verify_data
