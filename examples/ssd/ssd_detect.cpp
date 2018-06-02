@@ -103,7 +103,10 @@ Detector::Detector(const string& model_file,
   SetMean(mean_file, mean_value);
   nor_val = normalize_value;
 }
-
+float sec(clock_t clocks)
+{
+	return (float)clocks / CLOCKS_PER_SEC;
+}
 std::vector<vector<float> > Detector::Detect(const cv::Mat& img) {
   Blob<float>* input_layer = net_->input_blobs()[0];
   input_layer->Reshape(1, num_channels_,
@@ -119,9 +122,10 @@ std::vector<vector<float> > Detector::Detect(const cv::Mat& img) {
   else {
 	  Preprocess(img, &input_channels);
   }
-
-  net_->Forward();
-
+	clock_t time;
+	time = clock();
+	net_->Forward();
+	printf("Predicted in %f seconds.\n",  sec(clock() - time));
   /* Copy the output layer to a std::vector */
   Blob<float>* result_blob = net_->output_blobs()[0];
   const float* result = result_blob->cpu_data();
