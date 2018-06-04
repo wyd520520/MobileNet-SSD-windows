@@ -78,7 +78,7 @@ layer {
 }
 layer {
   name: "conv/depthwise"
-  type: "Convolution"
+  type: "DepthwiseConvolution"
   bottom: "Conv"
   top: "conv/depthwise"
   param {
@@ -279,7 +279,7 @@ layer {
 }
 layer {
   name: "conv_1/depthwise"
-  type: "Convolution"
+  type: "DepthwiseConvolution"
   bottom: "conv_1/expand"
   top: "conv_1/depthwise"
   param {
@@ -481,7 +481,7 @@ layer {
 }
 layer {
   name: "conv_2/depthwise"
-  type: "Convolution"
+  type: "DepthwiseConvolution"
   bottom: "conv_2/expand"
   top: "conv_2/depthwise"
   param {
@@ -689,7 +689,7 @@ layer {
 }
 layer {
   name: "conv_3/depthwise"
-  type: "Convolution"
+  type: "DepthwiseConvolution"
   bottom: "conv_3/expand"
   top: "conv_3/depthwise"
   param {
@@ -891,7 +891,7 @@ layer {
 }
 layer {
   name: "conv_4/depthwise"
-  type: "Convolution"
+  type: "DepthwiseConvolution"
   bottom: "conv_4/expand"
   top: "conv_4/depthwise"
   param {
@@ -1099,7 +1099,7 @@ layer {
 }
 layer {
   name: "conv_5/depthwise"
-  type: "Convolution"
+  type: "DepthwiseConvolution"
   bottom: "conv_5/expand"
   top: "conv_5/depthwise"
   param {
@@ -1307,7 +1307,7 @@ layer {
 }
 layer {
   name: "conv_6/depthwise"
-  type: "Convolution"
+  type: "DepthwiseConvolution"
   bottom: "conv_6/expand"
   top: "conv_6/depthwise"
   param {
@@ -1509,7 +1509,7 @@ layer {
 }
 layer {
   name: "conv_7/depthwise"
-  type: "Convolution"
+  type: "DepthwiseConvolution"
   bottom: "conv_7/expand"
   top: "conv_7/depthwise"
   param {
@@ -1717,7 +1717,7 @@ layer {
 }
 layer {
   name: "conv_8/depthwise"
-  type: "Convolution"
+  type: "DepthwiseConvolution"
   bottom: "conv_8/expand"
   top: "conv_8/depthwise"
   param {
@@ -1925,7 +1925,7 @@ layer {
 }
 layer {
   name: "conv_9/depthwise"
-  type: "Convolution"
+  type: "DepthwiseConvolution"
   bottom: "conv_9/expand"
   top: "conv_9/depthwise"
   param {
@@ -2133,7 +2133,7 @@ layer {
 }
 layer {
   name: "conv_10/depthwise"
-  type: "Convolution"
+  type: "DepthwiseConvolution"
   bottom: "conv_10/expand"
   top: "conv_10/depthwise"
   param {
@@ -2334,7 +2334,7 @@ layer {
 }
 layer {
   name: "conv_11/depthwise"
-  type: "Convolution"
+  type: "DepthwiseConvolution"
   bottom: "conv_11/expand"
   top: "conv_11/depthwise"
   param {
@@ -2542,7 +2542,7 @@ layer {
 }
 layer {
   name: "conv_12/depthwise"
-  type: "Convolution"
+  type: "DepthwiseConvolution"
   bottom: "conv_12/expand"
   top: "conv_12/depthwise"
   param {
@@ -2750,7 +2750,7 @@ layer {
 }
 layer {
   name: "conv_13/depthwise"
-  type: "Convolution"
+  type: "DepthwiseConvolution"
   bottom: "conv_13/expand"
   top: "conv_13/depthwise"
   param {
@@ -2952,7 +2952,7 @@ layer {
 }
 layer {
   name: "conv_14/depthwise"
-  type: "Convolution"
+  type: "DepthwiseConvolution"
   bottom: "conv_14/expand"
   top: "conv_14/depthwise"
   param {
@@ -3160,7 +3160,7 @@ layer {
 }
 layer {
   name: "conv_15/depthwise"
-  type: "Convolution"
+  type: "DepthwiseConvolution"
   bottom: "conv_15/expand"
   top: "conv_15/depthwise"
   param {
@@ -3368,7 +3368,7 @@ layer {
 }
 layer {
   name: "conv_16/depthwise"
-  type: "Convolution"
+  type: "DepthwiseConvolution"
   bottom: "conv_16/expand"
   top: "conv_16/depthwise"
   param {
@@ -3637,7 +3637,7 @@ layer {
 }
 layer {
   name: "layer_17/depthwise"
-  type: "Convolution"
+  type: "DepthwiseConvolution"
   bottom: "layer_16"
   top: "layer_17/depthwise"
   param {
@@ -3845,7 +3845,7 @@ layer {
 }
 layer {
   name: "layer_19/depthwise"
-  type: "Convolution"
+  type: "DepthwiseConvolution"
   bottom: "layer_18"
   top: "layer_19/depthwise"
   param {
@@ -4053,7 +4053,7 @@ layer {
 }
 layer {
   name: "layer_21/depthwise"
-  type: "Convolution"
+  type: "DepthwiseConvolution"
   bottom: "layer_20"
   top: "layer_21/depthwise"
   param {

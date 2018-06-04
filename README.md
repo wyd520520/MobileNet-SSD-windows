@@ -5,6 +5,7 @@ and I add following items into project
 
 1. Support MobileNetV2 (source from [MobileNetv2-SSDLite](https://github.com/chuanqi305/MobileNetv2-SSDLite) )
 2. Support yolov2 loss layer (source from my git [caffe-yolov2-windows](https://github.com/eric612/Caffe-YOLOv2-Windows))
+3. Rplace group convolution layer from [depthwise layer] , speed 4x up faster with group convolution
 
 ## Linux Version
 
