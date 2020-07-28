@@ -99,8 +99,6 @@ Download pre-train weights from original [web](https://github.com/chuanqi305/Mob
 
 $caffe_root\models\\MobileNet\
 
-rate-limit signs and car weight from [web](https://github.com/chuanqi305/MobileNet-SSD)
-
 ```
 > cd $caffe_root/
 > train_mobilenet.cmd
@@ -146,6 +144,10 @@ follow this [project](https://github.com/chuanqi305/MobileNet-SSD) step
 ### MobilnetSSD_V2
 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/0jzYd-UfaYY/0.jpg)](https://www.youtube.com/watch?v=0jzYd-UfaYY)
+
+### mobilenet-ssd Demo
+rate-limit signs and car pretrained weight from [web](https://googlemail.com/chuanqi305/MobileNet-SSD)
+
 
 ### Webcam Demo
 
