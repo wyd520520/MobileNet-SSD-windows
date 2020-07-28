@@ -99,6 +99,8 @@ Download pre-train weights from original [web](https://github.com/chuanqi305/Mob
 
 $caffe_root\models\\MobileNet\
 
+rate-limit signs and car weight from [web](https://github.com/chuanqi305/MobileNet-SSD)
+
 ```
 > cd $caffe_root/
 > train_mobilenet.cmd
